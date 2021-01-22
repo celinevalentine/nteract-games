@@ -11,24 +11,18 @@ const Timer = () => {
 
   const [timer, setTimer] = useState(10);
   const [score, setScore] = useState(0);
-  // const history = useHistory();
+  const history = useHistory();
   useEffect(() => {
-  //   let interval = setInterval(() => {
-  //     if (timer > 0) {
-  //       setTimer((timer) => timer - 1);
-  //     } else {
-  //       clearInterval(interval);
-  //       history.push("/readingtheroom/zoomroom/tasks/1/page/3");
-  //     }
-  //   }, 1000);
-  //   return () => clearInterval(interval);
-    if (grid12 || grid21 || grid23 === "clicked") {
-    setScore((prevScore) => prevScore + 1);
-  } else {
-    return setScore(score);
-  },[grid11,grid12,grid13,grid21,grid22,grid23]});
-  //   //add history below
-  // }, [timer, history, grid11]);
+    let interval = setInterval(() => {
+      if (timer > 0) {
+        setTimer((timer) => timer - 1);
+      } else {
+        clearInterval(interval);
+        history.push("/readingtheroom/zoomroom/tasks/1/page/3");
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [timer, history]);
   // const clickHandler11 = () => {
   //   console.log("11clicked");
   // };
@@ -66,13 +60,18 @@ const Timer = () => {
   const grid23Clicked = () => {
     setGrid23("clicked");
   };
-
-
+  const updateScore = () => {
+    if (grid12 || grid21 || grid23 === "clicked") {
+      setScore((prevScore) => prevScore + 1);
+    }
+    console.log(score);
+    return `${score}/5`;
+  };
 
   return (
     <>
       <div className="countdown">{timer}</div>
-      <div id="score">{score}</div>
+      <div id="score">{updateScore}</div>
       <div
         onClick={grid11Clicked}
         style={{

@@ -1,24 +1,24 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
-// import ReadingTheRoomScreen2 from "./components/ReadingTheRoomScreen2";
-import ZoomCallStart from "./components/components/ZoomCallStart";
-import ZoomCall1 from "./components/components/ZoomCall1";
-import TableofContents from "./components/components/TableofContents";
-import ZoomCall1Countdown from "./components/components/ZoomCall1Countdown";
-import Task1CompleteOverlay from "./components/Task1CompleteOverlay";
-import ZoomCall2 from "./components/components/ZoomCall2";
-import ZoomCall2Countdown from "./components/components/ZoomCall2Countdown";
-import Task2CompleteOverlay from "./components/components/Task2CompleteOverlay";
-import ZoomCall3 from "./components/components/ZoomCall3";
-import ZoomCall3Countdown from "./components/components/ZoomCall3Countdown";
-import Task3CompleteOverlay from "./components/components/Task3CompleteOverlay";
-import ZoomCall4 from "./components/components/ZoomCall4";
-import ZoomCall4Countdown from "./components/components/ZoomCall4Countdown";
-import Task4CompleteOverlay from "./components/components/Task4CompleteOverlay";
-import ZoomCall5 from "./components/components/ZoomCall5";
-import ZoomCall5Countdown from "./components/components/ZoomCall5Countdown";
-import Task5CompleteOverlay from "./components/components/Task5CompleteOverlay";
+// import ReadingTheRoomScreen2 from "./zoomroom/components/ReadingTheRoomScreen2";
+import ZoomCallStart from "./zoomroom/components/ZoomCallStart";
+import ZoomCall1 from "./zoomroom/components/ZoomCall1";
+import TableofContents from "./zoomroom/components/TableofContents";
+import ZoomCall1Countdown from "./zoomroom/components/ZoomCall1Countdown";
+import Task1CompleteOverlay from "./zoomroom/components/Task1CompleteOverlay";
+import ZoomCall2 from "./zoomroom/components/ZoomCall2";
+import ZoomCall2Countdown from "./zoomroom/components/ZoomCall2Countdown";
+import Task2CompleteOverlay from "./zoomroom/components/Task2CompleteOverlay";
+import ZoomCall3 from "./zoomroom/components/ZoomCall3";
+import ZoomCall3Countdown from "./zoomroom/components/ZoomCall3Countdown";
+import Task3CompleteOverlay from "./zoomroom/components/Task3CompleteOverlay";
+import ZoomCall4 from "./zoomroom/components/ZoomCall4";
+import ZoomCall4Countdown from "./zoomroom/components/ZoomCall4Countdown";
+import Task4CompleteOverlay from "./zoomroom/components/Task4CompleteOverlay";
+import ZoomCall5 from "./zoomroom/components/ZoomCall5";
+import ZoomCall5Countdown from "./zoomroom/components/ZoomCall5Countdown";
+import Task5CompleteOverlay from "./zoomroom/components/Task5CompleteOverlay";
 
 function App() {
   return (
