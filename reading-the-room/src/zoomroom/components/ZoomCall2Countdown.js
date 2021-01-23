@@ -5,14 +5,12 @@ import BackgroundImage from "./BackgroundImage";
 import Timer from "./Timer";
 import LeftArrow from "./LeftArrow";
 import { Link } from "react-router-dom";
-import CorrectClicks from "./CorrectClicks";
 
 const ZoomCall2Countdown = () => {
   return (
     <div>
       <BackgroundImage src={zoomcall} />
-      <Timer />
-      <CorrectClicks />
+      <Timer taskNumber={2} answers={3} />
       <Link to="/readingtheroom">
         <LeftArrow />
       </Link>

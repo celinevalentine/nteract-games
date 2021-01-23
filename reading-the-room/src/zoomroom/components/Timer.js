@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useHistory } from "react-router-dom";
 
-const Timer = () => {
+const Timer = ({ taskNumber, answers }) => {
   const [grid11, setGrid11] = useState("");
   const [grid12, setGrid12] = useState("");
   const [grid13, setGrid13] = useState("");
@@ -18,11 +18,11 @@ const Timer = () => {
         setTimer((timer) => timer - 1);
       } else {
         clearInterval(interval);
-        history.push("/readingtheroom/zoomroom/tasks/1/page/3");
+        history.push(`/readingtheroom/zoomroom/tasks/${taskNumber}/page/3`);
       }
     }, 1000);
     return () => clearInterval(interval);
-  }, [timer, history]);
+  }, [timer, history, taskNumber]);
   // const clickHandler11 = () => {
   //   console.log("11clicked");
   // };
@@ -60,20 +60,47 @@ const Timer = () => {
   const grid23Clicked = () => {
     setGrid23("clicked");
   };
+  let gridRef = useRef();
+
+  const onGridClick = (e) => {
+    if (gridRef.current) {
+      gridRef.current.setAttribute("disabled", "disabled");
+    }
+  };
   const updateScore = () => {
     if (grid12 || grid21 || grid23 === "clicked") {
       setScore((prevScore) => prevScore + 1);
     }
     console.log(score);
-    return `${score}/5`;
+    return `${score}/${answers}`;
+  };
+  const clickHandler12 = () => {
+    setGrid11("clicked");
+    updateScore();
+    onGridClick();
+    console.log("disabled");
+  };
+  const clickHandler21 = () => {
+    setGrid21("clicked");
+    updateScore();
+    onGridClick();
+    console.log("disabled");
+  };
+  const clickHandler23 = () => {
+    setGrid23("clicked");
+    updateScore();
+    onGridClick();
+    console.log("disabled");
   };
 
   return (
     <>
       <div className="countdown">{timer}</div>
-      <div id="score">{updateScore}</div>
+      <div className="score-box">
+        <p id="score">{`${score}/5`}</p>
+      </div>
       <div
-        onClick={grid11Clicked}
+        onClick={clickHandler12}
         style={{
           position: "absolute",
           border: 1,
@@ -112,7 +139,7 @@ const Timer = () => {
           borderStyle: "solid",
         }}></div>
       <div
-        onClick={grid21Clicked}
+        onClick={clickHandler21}
         style={{
           position: "absolute",
           border: 1,
@@ -138,7 +165,7 @@ const Timer = () => {
           borderStyle: "solid",
         }}></div>
       <div
-        onClick={grid23Clicked}
+        onClick={clickHandler23}
         style={{
           position: "absolute",
           border: 1,

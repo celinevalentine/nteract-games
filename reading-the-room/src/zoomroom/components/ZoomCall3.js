@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const ZoomCall3 = () => {
   return (
     <div>
-      <Link to="/readingtheroom/zoomroom/page/1">
+      <Link to="/readingtheroom">
         <LeftArrow />
       </Link>
 

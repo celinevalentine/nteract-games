@@ -88,7 +88,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 15px;
+  font-size: 21px;
   line-height: 28px;
   text-align: center;
   overflow-wrap: break-word;
@@ -206,8 +206,8 @@
   position: absolute;
   height: 59px;
   width: 343px;
-  left: 70px;
-  top: 50px;
+  left: 55px;
+  top: 20px;
   border-radius: nullpx;
 
   font-family: Roboto;
@@ -227,7 +227,7 @@
   position: absolute;
   height: 33px;
   width: 259px;
-  left: 80px;
+  left: 90px;
   top: 100px;
   border-radius: nullpx;
   white-space: nowrap;
