@@ -5,14 +5,12 @@ import BackgroundImage from "./BackgroundImage";
 import Timer from "./Timer";
 import LeftArrow from "./LeftArrow";
 import { Link } from "react-router-dom";
-import FailScreen from "./FailScreen";
 
 const ZoomCall4Countdown = () => {
   return (
     <div>
       <BackgroundImage src={zoomcall} />
       <Timer taskNumber={4} />
-      <FailScreen prompt="[Click on the books]" taskNumber={4} />
       <ClickScore taskNumber={4} numberOfAnswers={3} />
       <Link to="/readingtheroom">
         <LeftArrow />

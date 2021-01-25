@@ -1,7 +1,8 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
-// import ReadingTheRoomScreen2 from "./zoomroom/components/ReadingTheRoomScreen2";
+import ReadingTheRoomScreen2 from "./zoomroom/components/ReadingTheRoomScreen2";
+import ReadingTheRoomScreen1 from "./zoomroom/components/ReadingTheRoomScreen1";
 import ZoomCallStart from "./zoomroom/components/ZoomCallStart";
 import ZoomCall1 from "./zoomroom/components/ZoomCall1";
 import TableofContents from "./zoomroom/components/TableofContents";
@@ -21,7 +22,7 @@ import ZoomCall5Countdown from "./zoomroom/components/ZoomCall5Countdown";
 import Task5CompleteOverlay from "./zoomroom/components/Task5CompleteOverlay";
 import FailScreen from "./zoomroom/components/FailScreen";
 
-function App() {
+function App({ prompt = [], taskNumber = [] }) {
   return (
     <Switch>
       <Route exact path="/readingtheroom">
@@ -76,7 +77,16 @@ function App() {
         <Task5CompleteOverlay />
       </Route>
       <Route exact path="/timesup">
-        <FailScreen prompt={prompt} />
+        <FailScreen taskNumber={taskNumber} prompt={prompt} />
+      </Route>
+      <Route exact path="/timesup">
+        <FailScreen taskNumber={taskNumber} prompt={prompt} />
+      </Route>
+      <Route exact path="/readingtheroom/screen/1">
+        <ReadingTheRoomScreen1 />
+      </Route>
+      <Route exact path="/readingtheroom/screen/2">
+        <ReadingTheRoomScreen2 />
       </Route>
     </Switch>
   );

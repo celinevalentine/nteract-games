@@ -12,7 +12,6 @@ const ZoomCall2Countdown = () => {
     <div>
       <BackgroundImage src={zoomcall} />
       <Timer taskNumber={2} />
-      <FailScreen prompt="[Tap on the non-smiling people]" taskNumber={2} />
       <ClickScore taskNumber={2} numberOfAnswers={3} />
 
       <Link to="/readingtheroom">

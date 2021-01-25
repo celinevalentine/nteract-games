@@ -1,5 +1,5 @@
 import React from "react";
 // create a context
-const ScoreContext = React.useContext();
+const ScoreContext = React.createContext();
 
 export default ScoreContext;

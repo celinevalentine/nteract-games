@@ -1,10 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import scoreBox from "../images/scoreBox.png";
-import ScoreContext from "./ScoreContext";
+// import ScoreContext from "./ScoreContext";
 
 const ClickScore = ({ taskNumber, numberOfAnswers }) => {
-  // const [score, setScore] = useState(0);
-  const [score, setScore] = useContext(ScoreContext);
+  // const [score, setScore] = useContext(ScoreContext);
+  const [score, setScore] = useState(0);
 
   const onGridClick = (row, col) => {
     if (taskNumber === 1) {
