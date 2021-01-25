@@ -3,13 +3,20 @@ import PromptBox from "./PromptBox";
 import Button from "./Button";
 import { Link } from "react-router-dom";
 
-const Task5CompleteOverlay = () => {
+const FailScreen = ({ prompt, taskNumber }) => {
   return (
     <div>
       <PromptBox
-        title="You did it!"
-        msg="Congrats! You’ve completed the challenge."
+        title="Time's Up!"
+        msg={`Oh no! You didn’t find all the ${prompt}`}
       />
+      <Link to={`/readingroom/zoomroom/tasks/${taskNumber}/page/1`}>
+        <Button
+          btnClass="tryAgainButtonDiv"
+          spanId="play-again-btn-name"
+          name="TRY AGAIN"
+        />
+      </Link>
       <Link to="/readingtheroom">
         <Button
           btnClass="mainMenuButtonDiv"
@@ -17,15 +24,8 @@ const Task5CompleteOverlay = () => {
           name="MAIN MENU"
         />
       </Link>
-      <Link to="/readingtheroom/zoomroom/tasks">
-        <Button
-          btnClass="playAgainButtonDiv"
-          spanId="play-again-btn-name"
-          name="PLAY AGAIN"
-        />
-      </Link>
     </div>
   );
 };
 
-export default Task5CompleteOverlay;
+export default FailScreen;

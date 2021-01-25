@@ -19,6 +19,7 @@ import Task4CompleteOverlay from "./zoomroom/components/Task4CompleteOverlay";
 import ZoomCall5 from "./zoomroom/components/ZoomCall5";
 import ZoomCall5Countdown from "./zoomroom/components/ZoomCall5Countdown";
 import Task5CompleteOverlay from "./zoomroom/components/Task5CompleteOverlay";
+import FailScreen from "./zoomroom/components/FailScreen";
 
 function App() {
   return (
@@ -73,6 +74,9 @@ function App() {
       </Route>
       <Route exact path="/readingtheroom/zoomroom/tasks/5/page/3">
         <Task5CompleteOverlay />
+      </Route>
+      <Route exact path="/timesup">
+        <FailScreen prompt={prompt} />
       </Route>
     </Switch>
   );

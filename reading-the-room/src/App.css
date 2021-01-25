@@ -62,7 +62,7 @@
   height: 263.6700744628906px;
   width: 435px;
   left: 10px;
-  top: 30px;
+  top: 10px;
   border-radius: 0px;
 
   font-family: Baloo;
@@ -79,7 +79,7 @@
   height: 47.83395004272461px;
   width: 276.9230651855469px;
   left: 58px;
-  top: 116.66824340820312px;
+  top: 90px;
   border-radius: nullpx;
 
   padding-left: 1.5em;
@@ -105,7 +105,7 @@
   height: 45.500579833984375px;
   width: 256.15386962890625px;
   left: 330px;
-  top: 260px;
+  top: 270px;
   border-radius: 10px;
 
   font-family: Roboto;
@@ -138,7 +138,7 @@
   height: 45px;
   width: 185px;
   left: 460px;
-  top: 260px;
+  top: 270px;
   border-radius: 10px;
   background: #9cc8cd;
   border-radius: 10px;
@@ -167,7 +167,7 @@
   height: 45px;
   width: 185px;
   left: 250px;
-  top: 260px;
+  top: 270px;
   border-radius: 10px;
   background: #7fca60;
   border-radius: 10px;
@@ -190,6 +190,20 @@
   line-height: 33px;
 
   color: #000000;
+}
+.tryAgainButtonDiv {
+  position: absolute;
+
+  height: 45px;
+  width: 185px;
+  left: 250px;
+  top: 270px;
+  border-radius: 10px;
+  background: #ff66c1;
+  border-radius: 10px;
+  cursor: auto;
+
+  z-index: 2;
 }
 
 .left-arrow {
@@ -268,18 +282,18 @@
   position: absolute;
   width: 78px;
   height: 35px;
-  right: 19px;
-  top: 31px;
-
+  left: 810px;
+  top: 33px;
+  /* 
   background: rgba(78, 176, 186, 0.7);
-  border-radius: 10px;
+  border-radius: 10px; */
 }
 #score {
   position: absolute;
   height: 35px;
   width: 47px;
-  left: 25px;
-  top: -27px;
+  left: 830px;
+  top: 6px;
   border-radius: nullpx;
 
   font-family: Roboto;
@@ -287,6 +301,7 @@
   font-weight: normal;
   font-size: 30px;
   line-height: 35px;
+  z-index: 2;
 
   color: #000000;
 }

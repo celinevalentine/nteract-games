@@ -11,7 +11,7 @@ const ZoomCall5Countdown = () => {
   return (
     <div>
       <BackgroundImage src={zoomcall} />
-      <Timer />
+      <Timer taskNumber={5} numberOfAnswers={1} />
       <CorrectClicks />
       <Link to="/readingtheroom">
         <LeftArrow />

@@ -18,11 +18,13 @@ const ZoomCall5 = () => {
         proTips="Pro-tip: Zoom calls can sometimes have unexpected surprises."
         task="Click on the puppy"
       />
-      <Button
-        btnClass="inGameButtonDiv"
-        spanId="inGame-btn-name"
-        name="Continue"
-      />
+      <Link to="/readingtheroom/zoomroom/tasks/5/page/2">
+        <Button
+          btnClass="inGameButtonDiv"
+          spanId="inGame-btn-name"
+          name="Continue"
+        />
+      </Link>
     </div>
   );
 };

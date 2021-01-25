@@ -4,25 +4,23 @@ import BackgroundImage from "./BackgroundImage";
 import Timer from "./Timer";
 import LeftArrow from "./LeftArrow";
 import { Link } from "react-router-dom";
-// import Mapper from "./Mapper";
+import ClickScore from "./ClickScore";
+import FailScreen from "./FailScreen";
+import ScoreProvider from "./ScoreProvider";
 
 const ZoomCall1Countdown = () => {
   return (
-    <div>
-      <BackgroundImage src={zoomcall} usemap="zoomcall" />
-      <Timer taskNumber={1} answers={3} />
-      <Link to="/readingtheroom">
-        <LeftArrow />
-      </Link>
-      {/* <Mapper
-        src={zoomcall}
-        name="zoomcall"
-        title="11"
-        coords="0,22,295,196"
-        shape="rect"
-        style={{ backgroundColor: "red", border: "5px,solid,red" }}
-      /> */}
-    </div>
+    <ScoreProvider>
+      <div>
+        <BackgroundImage src={zoomcall} usemap="zoomcall" />
+        <Timer taskNumber={1} />
+        <ClickScore taskNumber={1} numberOfAnswers={3} />
+        <Link to="/readingtheroom">
+          <LeftArrow />
+        </Link>
+        <FailScreen taskNumber={1} />
+      </div>
+    </ScoreProvider>
   );
 };
 
