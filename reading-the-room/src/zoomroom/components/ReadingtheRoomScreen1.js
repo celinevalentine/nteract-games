@@ -2,6 +2,7 @@ import React from "react";
 import chair from "../images/chair.png";
 import ellipse from "../images/ellipse.svg";
 import ellipseLight from "../images/ellipseLight.svg";
+import { Link } from "react-router-dom";
 
 const ReadingtheRoomScreen1 = () => {
   return (
@@ -13,8 +14,14 @@ const ReadingtheRoomScreen1 = () => {
         Being mindful of your surroundings can help make you more comfortable in
         new environments.
       </p>
-      <img src={ellipse} alt="elipse" />
-      <img src={ellipseLight} alt="elipse light" />
+      <div className="ellipses">
+        <Link exact to="/readingtheroom/screen/2">
+          <img id="ellipse" src={ellipse} alt="elipse" />
+        </Link>
+        <Link exact to="/readingtheroom/screen/1">
+          <img id="ellipseLight" src={ellipseLight} alt="elipse light" />
+        </Link>
+      </div>
     </div>
   );
 };

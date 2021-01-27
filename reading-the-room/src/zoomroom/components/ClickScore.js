@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import scoreBox from "../images/scoreBox.png";
+import GridCell from "./GridCell";
 // import ScoreContext from "./ScoreContext";
 
 const ClickScore = ({ taskNumber, numberOfAnswers }) => {
@@ -51,28 +52,28 @@ const ClickScore = ({ taskNumber, numberOfAnswers }) => {
     }
   };
 
-  const GridCell = ({ style, onGridClick }) => {
-    const [clicked, setClicked] = useState(false);
-    const handleClick = () => {
-      if (!clicked) {
-        setClicked(true);
-        onGridClick();
-      }
-    };
-    return (
-      <div
-        style={{
-          position: "absolute",
-          border: 1,
-          zIndex: 10,
-          borderStyle: "solid",
-          borderColor: "red",
-          ...style,
-        }}
-        onClick={handleClick}
-        disable={clicked}></div>
-    );
-  };
+  // const GridCell = ({ style, onGridClick }) => {
+  //   const [clicked, setClicked] = useState(false);
+  //   const handleClick = () => {
+  //     if (!clicked) {
+  //       setClicked(true);
+  //       onGridClick();
+  //     }
+  //   };
+  //   return (
+  //     <div
+  //       style={{
+  //         position: "absolute",
+  //         border: 1,
+  //         zIndex: 10,
+  //         borderStyle: "solid",
+  //         borderColor: "red",
+  //         ...style,
+  //       }}
+  //       onClick={handleClick}
+  //       disable={clicked}></div>
+  //   );
+  // };
   return (
     <>
       <div>

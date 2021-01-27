@@ -1,3 +1,80 @@
+/* readingtheroom screen */
+.gameIntroTitle {
+  position: absolute;
+  height: 69px;
+  width: 370px;
+  left: 263px;
+  top: 46px;
+  border-radius: nullpx;
+
+  font-family: Baloo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 44px;
+  line-height: 69px;
+
+  color: #000000;
+}
+.gameIntroWords {
+  position: absolute;
+  width: 455px;
+  height: 99px;
+  left: 228px;
+  top: 181px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 30px;
+  text-align: center;
+
+  color: #000000;
+}
+#chair {
+  position: absolute;
+  height: 273px;
+  width: 360px;
+  left: -24px;
+  top: 141px;
+  border-radius: 0px;
+}
+#chair2 {
+  position: absolute;
+  height: 273px;
+  width: 360px;
+  left: 550px;
+  top: 144px;
+  border-radius: 0px;
+}
+.ellipses {
+  position: absolute;
+  height: 13px;
+  width: 44px;
+  left: 426px;
+  top: 346px;
+  border-radius: 0px;
+}
+#ellipseLight {
+  position: absolute;
+  height: 13px;
+  width: 13px;
+  left: 31px;
+  top: 0px;
+  border-radius: 10px;
+
+  background: #ececec;
+}
+#ellipse {
+  position: absolute;
+  height: 13px;
+  width: 13px;
+  left: 0px;
+  top: 0px;
+  border-radius: 10px;
+
+  background: #b7b7b7;
+}
 /* tableOfContents */
 #choose-scenario {
   /* Choose a Scenario */

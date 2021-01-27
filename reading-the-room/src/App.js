@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
 import ReadingTheRoomScreen2 from "./zoomroom/components/ReadingTheRoomScreen2";
-import ReadingTheRoomScreen1 from "./zoomroom/components/ReadingTheRoomScreen1";
+// import ReadingTheRoomScreen1 from "./zoomroom/components/ReadingTheRoomScreen1";
 import ZoomCallStart from "./zoomroom/components/ZoomCallStart";
 import ZoomCall1 from "./zoomroom/components/ZoomCall1";
 import TableofContents from "./zoomroom/components/TableofContents";
@@ -82,9 +82,9 @@ function App({ prompt = [], taskNumber = [] }) {
       <Route exact path="/timesup">
         <FailScreen taskNumber={taskNumber} prompt={prompt} />
       </Route>
-      <Route exact path="/readingtheroom/screen/1">
+      {/* <Route exact path="/readingtheroom/screen/1">
         <ReadingTheRoomScreen1 />
-      </Route>
+      </Route> */}
       <Route exact path="/readingtheroom/screen/2">
         <ReadingTheRoomScreen2 />
       </Route>
