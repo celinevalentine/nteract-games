@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import ScoreContext from "./ScoreContext";
+import ScoreContext from "../../zoomroom/components/ScoreContext";
 
-const ScoreProvider = ({ children }) => {
+const CoffeeScoreProvider = ({ children }) => {
   const [score, setScore] = useState(0);
   return (
     <ScoreContext.Provider value={[score, setScore]}>
@@ -10,4 +10,4 @@ const ScoreProvider = ({ children }) => {
   );
 };
 
-export default ScoreProvider;
+export default CoffeeScoreProvider;

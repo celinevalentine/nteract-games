@@ -128,7 +128,7 @@
   position: absolute;
   height: 263.6700744628906px;
   width: 435px;
-  left: 229px;
+  left: 225px;
   top: 71px;
   border-radius: 0px;
 
@@ -177,11 +177,11 @@
 }
 
 .inGameButtonDiv {
-  cursor: auto;
+  cursor: pointer;
   position: absolute;
   height: 45.500579833984375px;
   width: 256.15386962890625px;
-  left: 330px;
+  left: 310px;
   top: 270px;
   border-radius: 10px;
 
@@ -205,12 +205,12 @@
   top: 7px;
   text-align: center;
   border-radius: nullpx;
-  cursor: auto;
+  cursor: pointer;
 }
 .mainMenuButtonDiv {
   background: #9cc8cd;
   border-radius: 10px;
-  cursor: auto;
+  cursor: pointer;
   position: absolute;
   height: 45px;
   width: 185px;
@@ -248,7 +248,7 @@
   border-radius: 10px;
   background: #7fca60;
   border-radius: 10px;
-  cursor: auto;
+  cursor: pointer;
 
   z-index: 2;
 }
@@ -278,7 +278,7 @@
   border-radius: 10px;
   background: #ff66c1;
   border-radius: 10px;
-  cursor: auto;
+  cursor: pointer;
 
   z-index: 2;
 }
@@ -318,7 +318,7 @@
   position: absolute;
   height: 33px;
   width: 259px;
-  left: 90px;
+  left: 70px;
   top: 100px;
   border-radius: nullpx;
   white-space: nowrap;

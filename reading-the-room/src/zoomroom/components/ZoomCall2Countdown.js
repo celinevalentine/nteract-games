@@ -5,19 +5,21 @@ import BackgroundImage from "./BackgroundImage";
 import Timer from "./Timer";
 import LeftArrow from "./LeftArrow";
 import { Link } from "react-router-dom";
-import FailScreen from "./FailScreen";
+import ScoreProvider from "./ScoreProvider";
 
 const ZoomCall2Countdown = () => {
   return (
-    <div>
-      <BackgroundImage src={zoomcall} />
-      <Timer taskNumber={2} />
-      <ClickScore taskNumber={2} numberOfAnswers={3} />
+    <ScoreProvider>
+      <div>
+        <BackgroundImage src={zoomcall} />
+        <Timer taskNumber={2} numberOfAnswers={3} />
+        <ClickScore taskNumber={2} numberOfAnswers={3} />
 
-      <Link to="/readingtheroom">
-        <LeftArrow />
-      </Link>
-    </div>
+        <Link to="/readingtheroom">
+          <LeftArrow />
+        </Link>
+      </div>
+    </ScoreProvider>
   );
 };
 

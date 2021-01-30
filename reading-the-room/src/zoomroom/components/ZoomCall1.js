@@ -7,18 +7,18 @@ import Button from "./Button";
 import { Link } from "react-router-dom";
 
 const ZoomCall1 = () => {
+  let taskNumber = 1;
   return (
     <div>
       <Link to="/readingtheroom">
         <LeftArrow />
       </Link>
-
       <BackgroundImage src={zoomcall} />
       <PromptBox
         proTips="Pro-tip: Muting your microphone helps others focus on the speaker."
         task="Tap on the muted callers"
       />
-      <Link to="/readingtheroom/zoomroom/tasks/1/page/2">
+      <Link to={`/readingtheroom/zoomroom/tasks/${taskNumber}/page/2`}>
         <Button
           btnClass="inGameButtonDiv"
           spanId="inGame-btn-name"

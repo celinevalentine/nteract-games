@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import scoreBox from "../images/scoreBox.png";
 import GridCell from "./GridCell";
-// import ScoreContext from "./ScoreContext";
+import ScoreContext from "./ScoreContext";
 
-const ClickScore = ({ taskNumber, numberOfAnswers }) => {
-  // const [score, setScore] = useContext(ScoreContext);
-  const [score, setScore] = useState(0);
+const ClickScore = ({ taskNumber, numberOfAnswers, clickedScore }) => {
+  const [score, setScore] = useContext(ScoreContext);
 
   const onGridClick = (row, col) => {
     if (taskNumber === 1) {
@@ -15,6 +14,8 @@ const ClickScore = ({ taskNumber, numberOfAnswers }) => {
         (row === 2 && col === 3)
       ) {
         setScore((prevScore) => prevScore + 1);
+
+        console.log(score);
       }
       return `${score}/${numberOfAnswers}`;
     }
@@ -24,6 +25,7 @@ const ClickScore = ({ taskNumber, numberOfAnswers }) => {
         (row === 2 && col === 2) ||
         (row === 2 && col === 3)
       ) {
+        // setScore((prevScore) => prevScore + 1);
         setScore((prevScore) => prevScore + 1);
       }
       return `${score}/${numberOfAnswers}`;
@@ -31,6 +33,7 @@ const ClickScore = ({ taskNumber, numberOfAnswers }) => {
     if (taskNumber === 3) {
       if ((row === 1 && col === 3) || (row === 2 && col === 2)) {
         setScore((prevScore) => prevScore + 1);
+        // score((prevScore) => prevScore + 1);
       }
       return `${score}/${numberOfAnswers}`;
     }
@@ -41,39 +44,18 @@ const ClickScore = ({ taskNumber, numberOfAnswers }) => {
         (row === 2 && col === 3)
       ) {
         setScore((prevScore) => prevScore + 1);
+        // score((prevScore) => prevScore + 1);
       }
       return `${score}/${numberOfAnswers}`;
     }
     if (taskNumber === 5) {
       if (row === 2 && col === 3) {
         setScore((prevScore) => prevScore + 1);
+        // score((prevScore) => prevScore + 1);
       }
       return `${score}/${numberOfAnswers}`;
     }
   };
-
-  // const GridCell = ({ style, onGridClick }) => {
-  //   const [clicked, setClicked] = useState(false);
-  //   const handleClick = () => {
-  //     if (!clicked) {
-  //       setClicked(true);
-  //       onGridClick();
-  //     }
-  //   };
-  //   return (
-  //     <div
-  //       style={{
-  //         position: "absolute",
-  //         border: 1,
-  //         zIndex: 10,
-  //         borderStyle: "solid",
-  //         borderColor: "red",
-  //         ...style,
-  //       }}
-  //       onClick={handleClick}
-  //       disable={clicked}></div>
-  //   );
-  // };
   return (
     <>
       <div>

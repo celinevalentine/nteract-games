@@ -14,8 +14,8 @@ const GridCell = ({ style, onGridClick }) => {
         position: "absolute",
         border: 1,
         zIndex: 10,
-        borderStyle: "solid",
-        borderColor: "red",
+        // borderStyle: "solid",
+        // borderColor: "red",
         ...style,
       }}
       onClick={handleClick}

@@ -14,7 +14,7 @@ const TableofContents = () => {
       <Link to="/readingtheroom/zoomroom/tasks/">
         <img id="zoom-call-icon" src={zoomCallIcon} alt="zoom-call" />
       </Link>
-      <Link to="/readingtheroom/coffeechat">
+      <Link to="/readingtheroom/coffeechat/tasks">
         <img id="coffee-chat" src={coffeeChat} alt="coffee-chat" />
       </Link>
     </div>
