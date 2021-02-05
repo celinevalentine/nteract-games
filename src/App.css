@@ -382,3 +382,18 @@
 
   color: #000000;
 }
+#iframe {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  background: red; */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  border: rgb(255, 225, 0) solid 10px;
+}

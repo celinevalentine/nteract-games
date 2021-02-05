@@ -38,6 +38,7 @@ import CoffeeChatTask4Complete from "./coffeechat/components/CoffeeChatTask4Comp
 import CoffeeChat5 from "./coffeechat/components/CoffeeChat5";
 import CoffeeChat5Countdown from "./coffeechat/components/CoffeeChat5Countdown";
 import CoffeeChatTask5Complete from "./coffeechat/components/CoffeeChatTask5Complete";
+import InPersonSubMenu from "./zoomroom/components/InPersonSubMenu";
 
 function App({ taskNumber = [] }) {
   return (
@@ -45,6 +46,9 @@ function App({ taskNumber = [] }) {
       <Switch>
         <Route exact path="/readingtheroom">
           <TableofContents />
+        </Route>
+        <Route exact path="/readingtheroom/inpersonevent">
+          <InPersonSubMenu />
         </Route>
         <Route exact path="/readingtheroom/zoomroom/tasks">
           <ZoomCallStart />

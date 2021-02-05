@@ -20,7 +20,7 @@ const ZoomCallStart = () => {
       <Link to="/readingtheroom/zoomroom/tasks/1/page/1">
         <Button
           btnClass="inGameButtonDiv"
-          spanId="inGame-btn-name"
+          // spanId="inGame-btn-name"
           name="Continue"
         />
       </Link>
