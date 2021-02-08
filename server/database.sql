@@ -1,24 +1,26 @@
 -- many:many users:games
 CREATE TABLE users
 (
-    pk_user_id SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     username VARCHAR NOT NULL,
     password VARCHAR NOT NULL,
     email VARCHAR NOT NULL
 );
 
 
-INSERT INTO users
-VALUES
-    ('1', 'u1', 'password', 'u1@mail.com');
+-- INSERT INTO users
+-- VALUES
+--     ('1', 'u1', 'password', 'u1@mail.com');
+/* add column:
+todo: game_completed, game_duration */
 
 CREATE TABLE users_games
 (
-    fk_user_id INTEGER NOT NULL,
-    fk_game_id INTEGER NOT NULL,
-    PRIMARY KEY (fk_user_id, fk_game_id),
-    FOREIGN KEY (fk_user_id) REFERENCES users (pk_user_id) ON UPDATE CASCADE,
-    FOREIGN KEY (fk_game_id) REFERENCES games (pk_game_id) ON UPDATE CASCADE
+    user_id INTEGER NOT NULL,
+    game_id INTEGER NOT NULL,
+    PRIMARY KEY (user_id, game_id),
+    FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE,
+    FOREIGN KEY (game_id) REFERENCES games (id) ON DELETE CASCADE
 );
 
 INSERT INTO users_games
@@ -27,18 +29,17 @@ VALUES
 SELECT *
 FROM users_games;
 
-/* add column:
-game_completed,game_duration */
--- 
+
 CREATE TABLE games
 (
-    pk_game_id SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     game_name VARCHAR NOT NULL
+
 );
 
 INSERT INTO games
 VALUES
-    ('1', 'zoomroom call');
+    ('1', 'zoom call');
 SELECT *
 FROM games;
 
@@ -46,36 +47,39 @@ FROM games;
 -- 1:many games:tasks
 CREATE TABLE tasks
 (
-    pk_task_id SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
+    num_answers INTEGER NOT NULL,
     task_number INTEGER NOT NULL,
     task_name VARCHAR NOT NULL,
     protips VARCHAR NOT NULL,
     reminder VARCHAR NOT NULL,
-    fk_game_id INTEGER NOT NULL,
-    FOREIGN KEY (fk_game_id) REFERENCES games (pk_game_id) ON DELETE CASCADE
+    game_id INTEGER NOT NULL,
+    FOREIGN KEY (game_id) REFERENCES games (id) ON DELETE CASCADE
 );
 
 INSERT INTO tasks
 VALUES
-    ('1', '1', 'Tap the muted callers', 'Pro-tip: Muting your microphone helps others focus on the speaker.', 'Reminder: Mute your mic!', '1' );
+    ('1', '3', '1', 'Tap the muted callers', 'Pro-tip: Muting your microphone helps others focus on the speaker.', 'Reminder: Mute your mic!', '1' );
 SELECT *
 FROM tasks;
 
 -- 1:1 games:images & 1:many images:hotspots
 CREATE TABLE images
 (
-    fk_game_id INTEGER NOT NULL,
-    pk_img_id SERIAL UNIQUE NOT NULL,
+
+    id SERIAL UNIQUE NOT NULL,
     img_name VARCHAR NOT NULL,
     img_url VARCHAR NOT NULL,
-    CONSTRAINT fk_game_id FOREIGN KEY (fk_game_id) REFERENCES games (pk_game_id)
+    game_id INTEGER NOT NULL,
+    CONSTRAINT game_id FOREIGN KEY (game_id) REFERENCES games (id) ON
+    DELETE CASCADE
 );
 
 INSERT INTO images
 VALUES
-    ('1', '1', 'zoomcall', 'https:
+    ( 'zoom call', 'https:
 //drive.google.com/file/d/1bAFYX9zO9eS4zn5_NHWtYr1DAjbyud0j/view?usp=sharing
-');
+', '1');
 
 SELECT *
 FROM images;
@@ -86,14 +90,14 @@ FROM images;
 
 CREATE TABLE hotspots
 (
-    pk_hotspot_id SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     hotspot_name VARCHAR,
     x INTEGER NOT NULL,
     y INTEGER NOT NULL,
     width INTEGER NOT NULL,
     height INTEGER NOT NULL,
-    fk_img_id INTEGER NOT NULL,
-    FOREIGN KEY (fk_img_id) REFERENCES images (pk_img_id) ON DELETE CASCADE
+    img_id INTEGER NOT NULL,
+    FOREIGN KEY (img_id) REFERENCES images (id) ON DELETE CASCADE
 );
 
 INSERT INTO hotspots
