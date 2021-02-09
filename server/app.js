@@ -16,13 +16,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const gameRoutes = require("./routes/games");
 const taskRoutes = require("./routes/tasks");
 const imageRoutes = require("./routes/images");
-// const hotspotRoutes = require("./routes/hotspots");
+const hotspotRoutes = require("./routes/hotspots");
 
 // app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/games", gameRoutes);
 app.use("/api/v1/tasks", taskRoutes);
 app.use("/api/v1/images", imageRoutes);
-// app.use("/api/v1/hotspots", hotspotRoutes);
+app.use("/api/v1/hotspots", hotspotRoutes);
 
 // 404 handler
 app.use(function (req, res, next) {

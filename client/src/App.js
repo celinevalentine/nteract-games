@@ -1,11 +1,11 @@
 import "./App.css";
-// import Game from "./components/Game";
+import Game from "./components/Game";
 
-import LoginButton from "./components/LoginButton";
+// import LoginButton from "./components/LoginButton";
 // import LogoutButton from "./components/LogoutButton";
 
 function App() {
-  return <LoginButton />;
+  return <Game />;
 }
 
 export default App;

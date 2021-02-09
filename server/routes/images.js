@@ -20,7 +20,6 @@ router.post("/", async (req, res, next) => {
       "INSERT INTO images (img_name, img_url,game_id) VALUES ($1,$2,$3) returning *",
       [img_name, img_url, game_id],
     );
-    res.json(result.rows[0]);
   } catch (err) {
     return next(err);
   }
@@ -29,6 +28,16 @@ router.get("/", async (req, res, next) => {
   try {
     const result = await pool.query("SELECT * FROM images");
     res.json(result.rows);
+    res.json(result.rows[0]);
+    //prevent CORB error
+    // res.setHeader(
+    //   "Access-Control-Allow-Origin",
+    //   req.header("origin") ||
+    //     req.header("x-forwarded-host") ||
+    //     req.header("referer") ||
+    //     req.header("host"),
+    // );
+    // res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   } catch (err) {
     return next(err);
   }
@@ -46,10 +55,10 @@ router.get("/:id", async (req, res, next) => {
 router.put("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
-    const { img_name, img_url } = req.body;
+    const { img_name, img_url, game_id } = req.body;
     const result = await pool.query(
-      "UPDATE games SET img_name= $1, img_url=$2  WHERE id=$3 returning *",
-      [img_name, img_url, id],
+      "UPDATE images SET img_name= $1, img_url=$2, game_id=$3 WHERE id=$4 returning *",
+      [img_name, img_url, game_id, id],
     );
     console.log(id);
     res.json(result.rows[0]);
