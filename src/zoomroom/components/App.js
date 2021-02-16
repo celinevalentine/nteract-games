@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 // import ReadingTheRoomScreen2 from "./zoomroom/components/ReadingTheRoomScreen2";
 // import ReadingTheRoomScreen1 from "./zoomroom/components/ReadingTheRoomScreen1";
-import ZoomCallStart from "./zoomroom/components/ZoomCallStart";
+import ZoomCallStart from "./ZoomCallStart";
 import ZoomCall1 from "./zoomroom/components/ZoomCall1";
 import TableofContents from "./zoomroom/components/TableofContents";
 import ZoomCall1Countdown from "./zoomroom/components/ZoomCall1Countdown";
@@ -38,7 +38,7 @@ import CoffeeChatTask4Complete from "./coffeechat/components/CoffeeChatTask4Comp
 import CoffeeChat5 from "./coffeechat/components/CoffeeChat5";
 import CoffeeChat5Countdown from "./coffeechat/components/CoffeeChat5Countdown";
 import CoffeeChatTask5Complete from "./coffeechat/components/CoffeeChatTask5Complete";
-import InPersonSubMenu from "./zoomroom/components/InPersonSubMenu";
+import InPersonSubMenu from "./InPersonSubMenu";
 
 function App({ taskNumber = [] }) {
   return (

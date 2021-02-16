@@ -1,37 +1,35 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import PromptBox from "./PromptBox";
 import Button from "./Button";
 import { Link, useParams } from "react-router-dom";
+import { GameContext } from "../context/GameContext";
 
 const FailScreen = () => {
-  const { gameName, taskNumber } = useParams();
-  const [prompt, setPrompt] = useState("answers");
-  console.log(prompt);
+  const { gameId, taskNumber } = useParams();
+  const { tasks, games } = useContext(GameContext);
+  const task = tasks[taskNumber - 1];
+  const game = games[gameId - 1];
+  const { id } = game;
+
+  const { task_number } = task;
 
   // const history = useHistory();
   // console.log(history.location.state);
-  if (gameName === "zoomchat") {
-    if (taskNumber === 1) {
-      setPrompt("[mute callers]");
-    } else {
-      setPrompt("good");
-    }
-  }
 
   return (
     <div>
       <PromptBox
         title="Time's Up!"
-        msg={`Oh no! You didn’t find all the ${prompt}`}
+        msg="Oh no! You didn’t find all the answers"
       />
-      <Link to={`/readingtheroom/${gameName}/tasks/${taskNumber}/page/1`}>
+      <Link to={`/readingtheroom/games/${id}/tasks/${task_number}/page/1`}>
         <Button
           btnClass="tryAgainButtonDiv"
           spanId="play-again-btn-name"
           name="TRY AGAIN"
         />
       </Link>
-      <Link to="/readingtheroom">
+      <Link to="/">
         <Button
           btnClass="mainMenuButtonDiv"
           spanId="main-menu-btn-name"

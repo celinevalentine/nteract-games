@@ -1,5 +1,5 @@
 import React from "react";
-import promptbox from "../images/promptbox.png";
+import promptbox from "../../images/promptbox.png";
 
 const PromptBox = ({ title, msg, proTips, task }) => {
   return (

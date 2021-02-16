@@ -7,11 +7,13 @@
     "default": {},
     "examples": [
         {
-            "game_name": "mixer"
+            "game_name": "zoom",
+            "icon_url": "http://icon.com"
         }
     ],
     "required": [
-        "game_name"
+        "game_name",
+        "icon_url"
     ],
     "properties": {
         "game_name": {
@@ -21,7 +23,17 @@
             "description": "An explanation about the purpose of this instance.",
             "default": "",
             "examples": [
-                "mixer"
+                "zoom"
+            ]
+        },
+        "icon_url": {
+            "$id": "#/properties/icon_url",
+            "type": "string",
+            "title": "The icon_url schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "http://icon.com"
             ]
         }
     },

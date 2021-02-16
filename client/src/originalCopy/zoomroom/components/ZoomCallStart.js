@@ -1,9 +1,9 @@
 import React from "react";
 import zoomcall from "../images/zoomcall.png";
-import PromptBox from "./PromptBox";
+import PromptBox from "../../../components/utilities/PromptBox";
 import BackgroundImage from "./BackgroundImage";
-import Button from "./Button";
-import LeftArrow from "./LeftArrow";
+import Button from "../../../components/utilities/Button";
+import LeftArrow from "../../../components/utilities/LeftArrow";
 import { Link } from "react-router-dom";
 // import { useParams } from "react-router-dom";
 // import LeftArrow from './LeftArrow';

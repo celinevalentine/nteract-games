@@ -1,8 +1,7 @@
 const Router = require("express").Router;
 const router = new Router();
-// const Game = require("../models/game");
 const ExpressError = require("../expressError");
-const pool = require("../db");
+const Game = require("../models/Game");
 const { validate } = require("jsonschema");
 const gameNewSchema = require("../schemas/gameNewSchema.json");
 
@@ -16,44 +15,42 @@ router.post("/", async (req, res, next) => {
         400,
       );
     }
-    const { game_name } = req.body;
-    const result = await pool.query(
-      "INSERT INTO games (game_name) VALUES ($1) returning *",
-      [game_name],
-    );
-    res.json(result.rows[0]);
+    const game = await Game.create(req.body);
+    return res.status(201).json({ game });
   } catch (err) {
     return next(err);
   }
 });
 router.get("/", async (req, res, next) => {
   try {
-    const result = await pool.query("SELECT * FROM games");
-    res.json(result.rows);
+    const games = await Game.findAll(req.query);
+    res.json({ games });
   } catch (err) {
     return next(err);
   }
 });
 router.get("/:id", async (req, res, next) => {
   try {
-    const { id } = req.params;
-    const result = await pool.query("SELECT * FROM games WHERE id = $1", [id]);
-    console.log(id);
-    res.json(result.rows[0]);
+    const game = await Game.findOne(req.params.id);
+    res.json({ game });
   } catch (err) {
     return next(err);
   }
 });
 router.put("/:id", async (req, res, next) => {
   try {
-    const { id } = req.params;
-    const { game_name } = req.body;
-    const result = await pool.query(
-      "UPDATE games SET game_name= $1 WHERE id=$2 returning *",
-      [game_name, id],
-    );
-    console.log(id);
-    res.json(result.rows[0]);
+    if ("id" in req.body) {
+      throw new ExpressError("You are not allowed to change the ID", 400);
+    }
+    const validation = validate(req.body, gameNewSchema);
+    if (!validation.valid) {
+      throw new ExpressError(
+        validation.errors.map((e) => e.stack),
+        400,
+      );
+    }
+    const game = await Game.update(req.params.id, req.body);
+    return res.json({ game });
   } catch (err) {
     return next(err);
   }
@@ -61,9 +58,8 @@ router.put("/:id", async (req, res, next) => {
 router.delete("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
-    const result = await pool.query("DELETE FROM games WHERE id = $1", [id]);
-    console.log(id);
-    res.json("The game was deleted.");
+    await Game.remove(id);
+    res.json({ message: "The game was deleted." });
   } catch (err) {
     return next(err);
   }

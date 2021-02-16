@@ -2,20 +2,25 @@ import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
-import { BrowserRouter } from "react-router-dom";
 import App from "./App";
+import { GameProvider } from "./components/context/GameContext";
 
-const domain = process.env.REACT_APP_AUTH0_DOMAIN;
-const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
+// const domain = process.env.REACT_APP_AUTH0_DOMAIN;
+// const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
+//
+// dev-pwb5v-aq.us.auth0.com
+// FUkZCqf5UcsHYWOZ0Yl3QXFii466O1Mc
 
 ReactDOM.render(
-  <BrowserRouter>
+  <React.StrictMode>
     <Auth0Provider
-      domain={domain}
-      clientId={clientId}
+      domain="dev-pwb5v-aq.us.auth0.com"
+      clientId="FUkZCqf5UcsHYWOZ0Yl3QXFii466O1Mc"
       redirectUri={window.location.origin}>
-      <App />
+      <GameProvider>
+        <App />
+      </GameProvider>
     </Auth0Provider>
-  </BrowserRouter>,
+  </React.StrictMode>,
   document.getElementById("root"),
 );

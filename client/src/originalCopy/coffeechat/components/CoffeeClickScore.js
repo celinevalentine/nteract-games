@@ -67,7 +67,7 @@ const CoffeeClickScore = ({ taskNumber, numberOfAnswers, clickedScore }) => {
         style={{
           left: 333,
           height: 285,
-          width: 188.05,
+          width: 188,
           top: 130,
         }}
       />
@@ -152,15 +152,7 @@ const CoffeeClickScore = ({ taskNumber, numberOfAnswers, clickedScore }) => {
           top: 320,
         }}
       />
-      <GridCell
-        onGridClick={() => onGridClick(2, 1)}
-        style={{
-          left: 3,
-          height: 170.48,
-          width: 290.86,
-          top: 212.91,
-        }}
-      />
+
       <GridCell
         onGridClick={() => onGridClick("glasses")}
         style={{

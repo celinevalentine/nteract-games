@@ -1,26 +1,28 @@
 import React, { useState } from "react";
 
-const GridCell = ({ style, onGridClick }) => {
+const Hotspot = ({ hotspotName, style, onHotspotClick }) => {
   const [clicked, setClicked] = useState(false);
   const handleClick = () => {
     if (!clicked) {
       setClicked(true);
-      onGridClick();
+      onHotspotClick();
+      console.log(`${hotspotName} clicked`);
     }
   };
   return (
     <div
+      id={hotspotName}
       style={{
         position: "absolute",
         border: 1,
         zIndex: 10,
-        // borderStyle: "solid",
-        // borderColor: "red",
+        borderStyle: "solid",
+        borderColor: "red",
         ...style,
       }}
       onClick={handleClick}
-      disable={clicked}></div>
+      disable="false"></div>
   );
 };
 
-export default GridCell;
+export default Hotspot;

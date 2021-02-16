@@ -1,7 +1,7 @@
 import React from "react";
 import zoomcall from "../images/zoomcall.png";
 import BackgroundImage from "./BackgroundImage";
-import Timer from "./Timer";
+import Timer from "../../../components/screens/Timer";
 import LeftArrow from "./LeftArrow";
 import { Link } from "react-router-dom";
 import ClickScore from "./ClickScore";

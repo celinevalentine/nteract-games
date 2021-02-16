@@ -1,11 +1,16 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import ScoreContext from "./ScoreContext";
+import { GameContext } from "../context/GameContext";
 
-const Timer = ({ taskNumber, numberOfAnswers, gameName = "zoomroom" }) => {
-  const [score] = useContext(ScoreContext);
+const Timer = ({ taskNumber, numberOfAnswers, gameId }) => {
+  const { score } = React.useContext(GameContext);
+  // console.log(games);
+  // console.log(tasks);
+  console.log(score);
+
   const [timer, setTimer] = useState(10);
   const history = useHistory();
+
   useEffect(() => {
     let interval = setInterval(() => {
       if (timer > 0) {
@@ -16,16 +21,16 @@ const Timer = ({ taskNumber, numberOfAnswers, gameName = "zoomroom" }) => {
           // console.log(`tasknum-${taskNumber}`);
           // console.log(`numberOfAnswers-${numberOfAnswers}`);
           // console.log(`updateScore-${score}`);
-          return history.push(`/timesup/${gameName}/${taskNumber}`, taskNumber);
+          return history.push(`/timesup/${gameId}/${taskNumber}`, taskNumber);
         } else {
           return history.push(
-            `/readingtheroom/zoomroom/tasks/${taskNumber}/page/3`,
+            `/reading-the-room/games/${gameId}/tasks/${taskNumber}/page/3`,
           );
         }
       }
     }, 1000);
     return () => clearInterval(interval);
-  }, [timer, history, taskNumber, score, numberOfAnswers, gameName]);
+  }, [timer, history, taskNumber, score, numberOfAnswers, gameId]);
 
   return <div className="countdown">{timer}</div>;
 };

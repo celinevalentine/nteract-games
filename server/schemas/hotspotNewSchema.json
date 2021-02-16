@@ -7,92 +7,106 @@
     "default": {},
     "examples": [
         {
-           
-                "hotspot_name": "grid11",
-                "x": 38,
-                "y": 600,
-                "width": 291,
-                "height": 170
-            
+            "id": 1,
+            "hotspot_name": "grid11",
+            "x": 38,
+            "y": 3,
+            "width": 291,
+            "height": 170,
+            "task_id": 1,
+            "game_id": 1
         }
     ],
-    
+    "required": [
+       
+        "hotspot_name",
+        "x",
+        "y",
+        "width",
+        "height",
+        "task_id",
+        "game_id"
+    ],
     "properties": {
-        "hotspot": {
-            "$id": "#/properties/hotspot",
-            "type": "object",
-            "title": "The hotspot schema",
+        "id": {
+            "$id": "#/properties/id",
+            "type": "integer",
+            "title": "The id schema",
             "description": "An explanation about the purpose of this instance.",
-            "default": {},
+            "default": 0,
             "examples": [
-                {
-                    "hotspot_name": "grid11",
-                    "x": 38,
-                    "y": 600,
-                    "width": 291,
-                    "height": 170
-                }
-            ],
-            "required": [
-                "hotspot_name",
-                "x",
-                "y",
-                "width",
-                "height"
-            ],
-            "properties": {
-                "hotspot_name": {
-                    "$id": "#/properties/hotspot/properties/hotspot_name",
-                    "type": "string",
-                    "title": "The hotspot_name schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": "",
-                    "examples": [
-                        "grid11"
-                    ]
-                },
-                "x": {
-                    "$id": "#/properties/hotspot/properties/x",
-                    "type": "integer",
-                    "title": "The x schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": 0,
-                    "examples": [
-                        38
-                    ]
-                },
-                "y": {
-                    "$id": "#/properties/hotspot/properties/y",
-                    "type": "integer",
-                    "title": "The y schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": 0,
-                    "examples": [
-                        600
-                    ]
-                },
-                "width": {
-                    "$id": "#/properties/hotspot/properties/width",
-                    "type": "integer",
-                    "title": "The width schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": 0,
-                    "examples": [
-                        291
-                    ]
-                },
-                "height": {
-                    "$id": "#/properties/hotspot/properties/height",
-                    "type": "integer",
-                    "title": "The height schema",
-                    "description": "An explanation about the purpose of this instance.",
-                    "default": 0,
-                    "examples": [
-                        170
-                    ]
-                }
-            },
-            "additionalProperties": true
+                1
+            ]
+        },
+        "hotspot_name": {
+            "$id": "#/properties/hotspot_name",
+            "type": "string",
+            "title": "The hotspot_name schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "grid11"
+            ]
+        },
+        "x": {
+            "$id": "#/properties/x",
+            "type": "integer",
+            "title": "The x schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                38
+            ]
+        },
+        "y": {
+            "$id": "#/properties/y",
+            "type": "integer",
+            "title": "The y schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                3
+            ]
+        },
+        "width": {
+            "$id": "#/properties/width",
+            "type": "integer",
+            "title": "The width schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                291
+            ]
+        },
+        "height": {
+            "$id": "#/properties/height",
+            "type": "integer",
+            "title": "The height schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                170
+            ]
+        },
+        "task_id": {
+            "$id": "#/properties/task_id",
+            "type": "integer",
+            "title": "The task_id schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                1
+            ]
+        },
+        "game_id": {
+            "$id": "#/properties/game_id",
+            "type": "integer",
+            "title": "The game_id schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                1
+            ]
         }
     },
     "additionalProperties": true

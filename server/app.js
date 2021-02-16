@@ -15,13 +15,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // const userRoutes = require("./routes/users");
 const gameRoutes = require("./routes/games");
 const taskRoutes = require("./routes/tasks");
-const imageRoutes = require("./routes/images");
 const hotspotRoutes = require("./routes/hotspots");
 
 // app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/games", gameRoutes);
 app.use("/api/v1/tasks", taskRoutes);
-app.use("/api/v1/images", imageRoutes);
 app.use("/api/v1/hotspots", hotspotRoutes);
 
 // 404 handler

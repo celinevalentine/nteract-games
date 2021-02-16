@@ -1,5 +1,5 @@
 import React from "react";
-import leftArrow from "../images/leftArrow.svg";
+import leftArrow from "../../images/leftArrow.svg";
 import { useHistory } from "react-router-dom";
 
 const LeftArrow = () => {

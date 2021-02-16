@@ -1,0 +1,24 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { GameContext } from "../context/GameContext";
+
+function Games() {
+  const { games } = React.useContext(GameContext);
+
+  return (
+    <div className="home">
+      <h1>Choose A Senario</h1>
+      <ul style={{ listStyleType: "none" }}>
+        {games.map((game) => (
+          <li key={game.id}>
+            <Link to={`/reading-the-room/games/${game.id}/tasks/1/page/1`}>
+              <img src={game.icon_url} alt={game.game_name} />
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default Games;
