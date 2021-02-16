@@ -1,31 +1,41 @@
 import React from "react";
 import PromptBox from "./PromptBox";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 import { GameContext } from "../context/GameContext";
-import { Link, useParams } from "react-router-dom";
 
 const EndGame = () => {
   const { games, tasks } = React.useContext(GameContext);
+  const { gameId, taskNumber, pageNumber } = useParams();
 
-  const { gameId, taskNumber } = useParams();
-  const game = games[gameId - 1];
+  console.log("p", pageNumber);
+  console.log("t", taskNumber);
+  console.log("g", gameId);
+
   const task = tasks[taskNumber - 1];
+  const game = games[gameId - 1];
   console.log(task);
 
-  const { closer, reminder } = task;
-
+  const { closer } = task;
+  console.log(closer);
   return (
     <div>
-      <PromptBox title={closer} msg={reminder} />
-      <Link
-        to={`/reading-the-room/games/${game.id}/task/${
-          parseInt(taskNumber) + 1
-        }/page/1
-        }`}>
+      <PromptBox
+        title={closer}
+        msg="Congrats! You’ve completed the challenge."
+      />
+      <Link to="/">
         <Button
-          btnClass="inGameButtonDiv"
-          spanId="inGame-btn-name"
-          name="Continue"
+          btnClass="mainMenuButtonDiv"
+          spanId="main-menu-btn-name"
+          name="MAIN MENU"
+        />
+      </Link>
+      <Link to={`/reading-the-room/games/${game.id}/task/0/page/0`}>
+        <Button
+          btnClass="playAgainButtonDiv"
+          spanId="play-again-btn-name"
+          name="PLAY AGAIN"
         />
       </Link>
     </div>

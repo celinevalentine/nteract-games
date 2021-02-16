@@ -1,75 +1,42 @@
 import React, { useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import Button from "./Button";
+import PromptBox from "./PromptBox";
 import LeftArrow from "./LeftArrow";
 import { GameContext } from "../context/GameContext";
-import { Link, useParams } from "react-router-dom";
-import Timer from "./Timer";
-import ClickScore from "./ClickScore";
+// import { useFetch } from "./hooks/useFetch";
 
-const StartGame = () => {
-  const { tasks, hotspots } = React.useContext(GameContext);
+function StartGame() {
+  const { games, tasks } = React.useContext(GameContext);
 
-  const { gameId, taskNumber } = useParams();
+  console.log(games);
+  console.log(tasks);
 
-  const task = tasks[taskNumber - 1];
+  const { gameId, taskNumber, pageNumber } = useParams();
+
+  console.log("p", pageNumber);
+  console.log("t", taskNumber);
+  console.log("g", gameId);
+
+  const task = tasks[taskNumber];
+  const game = games[gameId - 1];
   console.log(task);
 
-  const { id, num_answers, task_number, img_url } = task;
-  console.log(id);
-
-  const hotspotsByTaskId = hotspots.filter((h) => h.task_id === id);
-  console.log(hotspotsByTaskId);
-  const hotspotNames = hotspotsByTaskId.map((h) => h);
-  console.log(hotspotNames);
-  const hotspotObj = hotspotsByTaskId.map((h) => ({
-    hotspotName: h.hotspot_name,
-    x: h.x,
-    y: h.y,
-    width: h.width,
-    height: h.height,
-  }));
-  console.log(hotspotObj);
-  // const { hotspotName, x, y, width, height } = hotspotObj;
-
-  // const fetchTask = async () => {
-  //   try {
-  //     const resp = await GameApi.get(`/api/v1/tasks/${id}`);
-  //     console.log(resp.data.task);
-  //     let task = resp.data.task;
-  //     setTask(task);
-  //     console.log(task);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchTask();
-  // }, []);
-
-  // const hotspotArr = task.hotspot;
-  // console.log(hotspotArr);
-  // console.log(arr[0]);
-
-  // const { hotspot_name, x, y, width, height } = hotspot;
-
+  const { game_name } = game;
+  const { img_url, opener, task_number } = task;
+  console.log(task_number);
   return (
-    <>
+    <div>
       <img src={img_url} alt="" />
+      <PromptBox title={game_name} msg={opener} />
       <Link to="/">
         <LeftArrow />
       </Link>
-      {/* <Timer
-        taskNumber={task_number}
-        numberOfAnswers={num_answers}
-        gameId={gameId}
-      /> */}
-      <ClickScore
-        taskNumber={task_number}
-        numberOfAnswers={num_answers}
-        hotspots={hotspotObj}
-      />
-    </>
+      <Link to={`/reading-the-room/games/${game.id}/task/1/page/1`}>
+        <Button btnClass="inGameButtonDiv" name="Continue" />
+      </Link>
+    </div>
   );
-};
+}
 
 export default StartGame;

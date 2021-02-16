@@ -16,6 +16,7 @@ const GameProvider = ({ children }) => {
       console.log(resp.data.games);
       let games = resp.data.games;
       setGames(games);
+      console.log(games);
     } catch (error) {
       console.log(error);
     }
@@ -27,7 +28,7 @@ const GameProvider = ({ children }) => {
       // console.log(resp.data.tasks);
       let tasks = resp.data.tasks;
       setTasks(tasks);
-      // console.log(tasks);
+      console.log(tasks);
     } catch (error) {
       console.log(error);
     }

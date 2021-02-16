@@ -5,7 +5,8 @@ const Hotspot = ({ hotspotName, style, onHotspotClick }) => {
   const handleClick = () => {
     if (!clicked) {
       setClicked(true);
-      onHotspotClick();
+      // onHotspotClick();
+      console.log(onHotspotClick);
       console.log(`${hotspotName} clicked`);
     }
   };

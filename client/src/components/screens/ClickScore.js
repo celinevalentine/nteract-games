@@ -11,6 +11,8 @@ const ClickScore = ({ taskNumber, numberOfAnswers, hotspots }) => {
     if (taskNum === taskNumber && name === hotspotName) {
       setScore((prevScore) => prevScore + 1);
       console.log(score);
+      console.log(name);
+      console.log(taskNum);
     }
     return `${score}/${numberOfAnswers}`;
   };

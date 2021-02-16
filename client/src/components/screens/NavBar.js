@@ -10,7 +10,7 @@ const Navbar = () => {
     user,
     isLoading,
   } = useAuth0();
-  console.log({ isAuthenticated, user, isLoading });
+  // console.log({ isAuthenticated, user, isLoading });
   const isUser = isAuthenticated && user;
 
   return (

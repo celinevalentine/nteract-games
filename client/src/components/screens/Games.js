@@ -11,7 +11,7 @@ function Games() {
       <ul style={{ listStyleType: "none" }}>
         {games.map((game) => (
           <li key={game.id}>
-            <Link to={`/reading-the-room/games/${game.id}/tasks/1/page/1`}>
+            <Link to={`/reading-the-room/games/${game.id}/tasks/0/page/0`}>
               <img src={game.icon_url} alt={game.game_name} />
             </Link>
           </li>

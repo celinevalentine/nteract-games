@@ -1,16 +1,25 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import EndGame from "./EndGame";
+import EndTask from "./EndTask";
+import DuringTask from "./DuringTask";
+import StartTask from "./StartTask";
 import StartGame from "./StartGame";
-import Tasks from "./Tasks";
 
 const TaskPage = () => {
   const { gameId, taskNumber, pageNumber } = useParams();
 
   switch (pageNumber) {
+    case "0":
+      return (
+        <StartGame
+          gameId={gameId}
+          taskNumber={taskNumber}
+          pageNumber={pageNumber}
+        />
+      );
     case "1":
       return (
-        <Tasks
+        <StartTask
           gameId={gameId}
           taskNumber={taskNumber}
           pageNumber={pageNumber}
@@ -19,7 +28,7 @@ const TaskPage = () => {
 
     case "2":
       return (
-        <StartGame
+        <DuringTask
           gameId={gameId}
           taskNumber={taskNumber}
           pageNumber={pageNumber}
@@ -28,12 +37,13 @@ const TaskPage = () => {
 
     case "3":
       return (
-        <EndGame
+        <EndTask
           gameId={gameId}
           taskNumber={taskNumber}
           pageNumber={pageNumber}
         />
       );
+    //end of game when taskNumber=5, render EndGame
 
     default:
       return null;

@@ -6,7 +6,7 @@ import LeftArrow from "./LeftArrow";
 import { GameContext } from "../context/GameContext";
 // import { useFetch } from "./hooks/useFetch";
 
-function Tasks() {
+function StartTask() {
   const { games, tasks } = React.useContext(GameContext);
 
   // console.log(games);
@@ -25,25 +25,20 @@ function Tasks() {
   const game = games[gameId - 1];
   console.log(task);
 
-  const { game_name } = game;
-  const { img_url, opener, task_number } = task;
+  const { img_url, protips, task_name, task_number } = task;
   console.log(task_number);
   return (
     <div>
-      <h1>game start here</h1>
       <img src={img_url} alt="" />
-      <PromptBox title={game_name} msg={opener} />
+      <PromptBox proTips={protips} task={task_name} />
       <Link to="/">
         <LeftArrow />
       </Link>
-      <Link
-        to={`/reading-the-room/games/${game.id}/task/${task_number}/page/${
-          parseInt(pageNumber) + 1
-        }`}>
+      <Link to={`/reading-the-room/games/${game.id}/task/${taskNumber}/page/2`}>
         <Button btnClass="inGameButtonDiv" name="Continue" />
       </Link>
     </div>
   );
 }
 
-export default Tasks;
+export default StartTask;
