@@ -23,6 +23,15 @@ CREATE TABLE task
     FOREIGN KEY (game_id) REFERENCES game (id) ON DELETE CASCADE
 );
 
+CREATE TABLE task_hotspot
+(
+    task_id INTEGER NOT NULL,
+    hotspot_id INTEGER NOT NULL,
+    PRIMARY KEY (task_id,hotspot_id),
+    FOREIGN KEY (task_id) REFERENCES task (id) ON DELETE CASCADE,
+    FOREIGN KEY (hotspot_id) REFERENCES hotspot (id) ON DELETE CASCADE
+);
+
 CREATE TABLE hotspot
 (
     id SERIAL PRIMARY KEY,
@@ -30,9 +39,6 @@ CREATE TABLE hotspot
     x INTEGER NOT NULL,
     y INTEGER NOT NULL,
     width INTEGER NOT NULL,
-    height INTEGER NOT NULL,
-    task_id INTEGER NOT NULL,
-    FOREIGN KEY (task_id) REFERENCES task (id) ON DELETE CASCADE,
-    game_id INTEGER NOT NULL,
-    FOREIGN KEY (game_id) REFERENCES game (id) ON DELETE CASCADE
+    height INTEGER NOT NULL
+
 );

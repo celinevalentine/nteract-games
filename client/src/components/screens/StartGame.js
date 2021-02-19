@@ -1,38 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Button from "./Button";
 import PromptBox from "./PromptBox";
 import LeftArrow from "./LeftArrow";
-import { GameContext } from "../context/GameContext";
-// import { useFetch } from "./hooks/useFetch";
+import GameApi from "../apis/GameApi";
 
 function StartGame() {
-  const { games, tasks } = React.useContext(GameContext);
-
-  console.log(games);
-  console.log(tasks);
-
   const { gameId, taskNumber, pageNumber } = useParams();
 
-  console.log("p", pageNumber);
-  console.log("t", taskNumber);
-  console.log("g", gameId);
+  const [game, setGame] = useState([]);
+  const fetchGame = async () => {
+    try {
+      const resp = await GameApi.get(`/api/v1/games/${gameId}`);
+      let game = resp.data;
+      setGame(game);
+      console.log(game);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    fetchGame();
+  }, []);
 
-  const task = tasks[taskNumber];
-  const game = games[gameId - 1];
+  console.log(game && game.task);
+  let tasks = game && game.task;
+  let task = tasks && tasks[taskNumber];
   console.log(task);
 
-  const { game_name } = game;
-  const { img_url, opener, task_number } = task;
-  console.log(task_number);
+  // console.log(task.task_number);
+
   return (
     <div>
-      <img src={img_url} alt="" />
-      <PromptBox title={game_name} msg={opener} />
+      <img src={task && task.img_url} alt="" />
+      <PromptBox title={game && game.game_name} msg={task && task.opener} />
       <Link to="/">
         <LeftArrow />
       </Link>
-      <Link to={`/reading-the-room/games/${game.id}/task/1/page/1`}>
+      <Link
+        to={`/reading-the-room/games/${game.id}/tasks/${
+          parseInt(taskNumber) + 1
+        }/page/${parseInt(pageNumber) + 1}`}>
         <Button btnClass="inGameButtonDiv" name="Continue" />
       </Link>
     </div>

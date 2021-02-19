@@ -1,35 +1,61 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PromptBox from "./PromptBox";
 import Button from "./Button";
-import { GameContext } from "../context/GameContext";
+import GameApi from "../apis/GameApi";
 import { Link, useParams } from "react-router-dom";
+import EndGame from "./EndGame";
 
-const EndGame = () => {
-  const { games, tasks } = React.useContext(GameContext);
+const EndTask = () => {
+  const { gameId, taskNumber, pageNumber } = useParams();
 
-  const { gameId, taskNumber } = useParams();
-  const game = games[gameId - 1];
-  const task = tasks[taskNumber - 1];
+  console.log(gameId, taskNumber, pageNumber);
+
+  const [game, setGame] = useState([]);
+  const fetchGame = async () => {
+    try {
+      const resp = await GameApi.get(`/api/v1/games/${gameId}`);
+      let game = resp.data;
+      setGame(game);
+      console.log(game);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    fetchGame();
+  }, []);
+
+  console.log(game && game.task);
+  let tasks = game && game.task;
+  console.log(taskNumber);
+  let task = tasks && tasks[taskNumber - 1];
   console.log(task);
-
-  const { closer, reminder } = task;
 
   return (
     <div>
-      <PromptBox title={closer} msg={reminder} />
-      <Link
-        to={`/reading-the-room/games/${game.id}/task/${
-          parseInt(taskNumber) + 1
-        }/page/1
-        }`}>
-        <Button
-          btnClass="inGameButtonDiv"
-          spanId="inGame-btn-name"
-          name="Continue"
+      {taskNumber === "5" && pageNumber === "3" ? (
+        <EndGame
+          gameId={gameId}
+          taskNumber={taskNumber}
+          pageNumber={pageNumber}
         />
-      </Link>
+      ) : (
+        <>
+          <PromptBox title={task && task.closer} msg={task && task.reminder} />
+          <Link
+            to={`/reading-the-room/games/${game && game.id}/tasks/${
+              parseInt(taskNumber) + 1
+            }/page/1`}>
+            <Button
+              btnClass="inGameButtonDiv"
+              spanId="inGame-btn-name"
+              name="Continue"
+            />
+          </Link>
+        </>
+      )}
     </div>
   );
 };
 
-export default EndGame;
+export default EndTask;

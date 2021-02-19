@@ -1,11 +1,19 @@
 import React from "react";
 import scoreBox from "../../images/scoreBox.png";
 import Hotspot from "./Hotspot";
-import { GameContext } from "../context/GameContext";
 
-const ClickScore = ({ taskNumber, numberOfAnswers, hotspots }) => {
-  const { score, setScore } = React.useContext(GameContext);
-  const hotspotName = hotspots.map((h) => h.hotspot_name);
+const ClickScore = ({
+  taskNumber,
+  numberOfAnswers,
+  hotspots,
+  hotspotName,
+  score,
+  setScore,
+}) => {
+  console.log("click-t", taskNumber);
+  console.log("click-hs", hotspotName);
+
+  console.log("score", score);
 
   const onHotspotClick = (name, taskNum) => {
     if (taskNum === taskNumber && name === hotspotName) {
@@ -22,18 +30,21 @@ const ClickScore = ({ taskNumber, numberOfAnswers, hotspots }) => {
         <img className="score-box" src={scoreBox} alt="score-box" />
         <p id="score">{`${score}/${numberOfAnswers}`}</p>
       </div>
-      {hotspots.map((h, i) => (
-        <Hotspot
-          key={i}
-          onClick={() => onHotspotClick(hotspotName, taskNumber)}
-          style={{
-            x: h.x,
-            y: h.y,
-            width: h.width,
-            height: h.height,
-          }}
-        />
-      ))}
+
+      {hotspots &&
+        hotspots.map((h, i) => (
+          <Hotspot
+            hotspotName={hotspotName}
+            key={i}
+            onClick={() => onHotspotClick(hotspotName, taskNumber)}
+            style={{
+              left: `${h.x}px`,
+              top: `${h.y}px`,
+              width: `${h.width}px`,
+              height: `${h.height}px`,
+            }}
+          />
+        ))}
     </>
   );
 };

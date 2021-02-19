@@ -7,15 +7,16 @@ function Games() {
 
   return (
     <div className="home">
-      <h1>Choose A Senario</h1>
+      <h1 className="text-center">Choose A Senario</h1>
       <ul style={{ listStyleType: "none" }}>
-        {games.map((game) => (
-          <li key={game.id}>
-            <Link to={`/reading-the-room/games/${game.id}/tasks/0/page/0`}>
-              <img src={game.icon_url} alt={game.game_name} />
-            </Link>
-          </li>
-        ))}
+        {games &&
+          games.map((game) => (
+            <li key={game.id}>
+              <Link to={`/reading-the-room/games/${game.id}/tasks/0/page/0`}>
+                <img src={game.icon_url} alt={game.game_name} />
+              </Link>
+            </li>
+          ))}
       </ul>
     </div>
   );

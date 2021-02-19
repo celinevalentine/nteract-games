@@ -44,11 +44,17 @@ class Task {
     if (!task) {
       throw new ExpressError(`There exists no task '${id}'`, 404);
     }
-    const hotspotsRes = await db.query(
-      `SELECT * FROM hotspot WHERE task_id = $1`,
+    const taskHotspotRes = await db.query(
+      `SELECT t.id AS task_id, t.task_number, h.hotspot_name, h.x, h.y, h.width,h.height 
+        FROM task As t 
+          LEFT JOIN task_hotspot As th 
+            On t.id=th.task_id 
+          LEFT JOIN hotspot As h 
+            On th.hotspot_id=h.id 
+        WHERE t.id = $1;`,
       [id],
     );
-    task.hotspot = hotspotsRes.rows;
+    task.hotspot = taskHotspotRes.rows;
     return task;
   }
 

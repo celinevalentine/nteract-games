@@ -7,37 +7,21 @@
     "default": {},
     "examples": [
         {
-            "id": 1,
             "hotspot_name": "grid11",
-            "x": 38,
-            "y": 3,
+            "x": 13,
+            "y": 38,
             "width": 291,
-            "height": 170,
-            "task_id": 1,
-            "game_id": 1
+            "height": 170
         }
     ],
     "required": [
-       
         "hotspot_name",
         "x",
         "y",
         "width",
-        "height",
-        "task_id",
-        "game_id"
+        "height"
     ],
     "properties": {
-        "id": {
-            "$id": "#/properties/id",
-            "type": "integer",
-            "title": "The id schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": 0,
-            "examples": [
-                1
-            ]
-        },
         "hotspot_name": {
             "$id": "#/properties/hotspot_name",
             "type": "string",
@@ -55,7 +39,7 @@
             "description": "An explanation about the purpose of this instance.",
             "default": 0,
             "examples": [
-                38
+                13
             ]
         },
         "y": {
@@ -65,7 +49,7 @@
             "description": "An explanation about the purpose of this instance.",
             "default": 0,
             "examples": [
-                3
+                38
             ]
         },
         "width": {
@@ -86,26 +70,6 @@
             "default": 0,
             "examples": [
                 170
-            ]
-        },
-        "task_id": {
-            "$id": "#/properties/task_id",
-            "type": "integer",
-            "title": "The task_id schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": 0,
-            "examples": [
-                1
-            ]
-        },
-        "game_id": {
-            "$id": "#/properties/game_id",
-            "type": "integer",
-            "title": "The game_id schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": 0,
-            "examples": [
-                1
             ]
         }
     },

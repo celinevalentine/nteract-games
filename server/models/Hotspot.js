@@ -12,8 +12,8 @@ class hotspot {
 
   static async create({ hotspot_name, x, y, width, height, task_id, game_id }) {
     const result = await db.query(
-      `INSERT INTO hotspot (hotspot_name, x,y,width,height,task_id,game_id) VALUES ($1,$2,$3,$4,$5,$6,$7) returning *`,
-      [hotspot_name, x, y, width, height, task_id, game_id],
+      `INSERT INTO hotspot (hotspot_name, x,y,width,height) VALUES ($1,$2,$3,$4,$5) returning *`,
+      [hotspot_name, x, y, width, height],
     );
     return result.rows[0];
   }
@@ -42,17 +42,8 @@ class hotspot {
 
   static async update(id, data) {
     const result = await db.query(
-      `UPDATE hotspot SET hotspot_name=$1,x=$2,y=$3,width=$4,height=$5,task_id=$6,game_id=$7 WHERE id = $8 returning *`,
-      [
-        data.hotspot_name,
-        data.x,
-        data.y,
-        data.width,
-        data.height,
-        data.task_id,
-        data.game_id,
-        id,
-      ],
+      `UPDATE hotspot SET hotspot_name=$1,x=$2,y=$3,width=$4,height=$5 WHERE id = $6 returning *`,
+      [data.hotspot_name, data.x, data.y, data.width, data.height, id],
     );
     const hotspot = result.rows[0];
     if (!hotspot) {

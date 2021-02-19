@@ -22,7 +22,7 @@ const FailScreen = () => {
         title="Time's Up!"
         msg="Oh no! You didn’t find all the answers"
       />
-      <Link to={`/readingtheroom/games/${id}/tasks/${task_number}/page/1`}>
+      <Link to={`/reading-the-room/games/${id}/tasks/${task_number}/page/1`}>
         <Button
           btnClass="tryAgainButtonDiv"
           spanId="play-again-btn-name"

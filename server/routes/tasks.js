@@ -16,7 +16,7 @@ router.post("/", async (req, res, next) => {
       );
     }
     const task = await Task.create(req.body);
-    return res.status(201).json({ task });
+    return res.status(201).json(task);
   } catch (err) {
     return next(err);
   }
@@ -24,7 +24,7 @@ router.post("/", async (req, res, next) => {
 router.get("/", async (req, res, next) => {
   try {
     const tasks = await Task.findAll(req.query);
-    res.json({ tasks });
+    res.json(tasks);
   } catch (err) {
     return next(err);
   }
@@ -32,7 +32,7 @@ router.get("/", async (req, res, next) => {
 router.get("/:id", async (req, res, next) => {
   try {
     const task = await Task.findOne(req.params.id);
-    res.json({ task });
+    res.json(task);
   } catch (err) {
     return next(err);
   }
@@ -50,7 +50,7 @@ router.put("/:id", async (req, res, next) => {
       );
     }
     const task = await Task.update(req.params.id, req.body);
-    return res.json({ task });
+    return res.json(task);
   } catch (err) {
     return next(err);
   }

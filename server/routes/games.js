@@ -16,7 +16,7 @@ router.post("/", async (req, res, next) => {
       );
     }
     const game = await Game.create(req.body);
-    return res.status(201).json({ game });
+    return res.status(201).json(game);
   } catch (err) {
     return next(err);
   }
@@ -24,7 +24,7 @@ router.post("/", async (req, res, next) => {
 router.get("/", async (req, res, next) => {
   try {
     const games = await Game.findAll(req.query);
-    res.json({ games });
+    res.json(games);
   } catch (err) {
     return next(err);
   }
@@ -32,7 +32,7 @@ router.get("/", async (req, res, next) => {
 router.get("/:id", async (req, res, next) => {
   try {
     const game = await Game.findOne(req.params.id);
-    res.json({ game });
+    res.json(game);
   } catch (err) {
     return next(err);
   }
@@ -50,7 +50,7 @@ router.put("/:id", async (req, res, next) => {
       );
     }
     const game = await Game.update(req.params.id, req.body);
-    return res.json({ game });
+    return res.json(game);
   } catch (err) {
     return next(err);
   }

@@ -16,7 +16,7 @@ router.post("/", async (req, res, next) => {
       );
     }
     const hotspot = await Hotspot.create(req.body);
-    return res.status(201).json({ hotspot });
+    return res.status(201).json(hotspot);
   } catch (err) {
     return next(err);
   }
@@ -24,7 +24,7 @@ router.post("/", async (req, res, next) => {
 router.get("/", async (req, res, next) => {
   try {
     const hotspots = await Hotspot.findAll(req.query);
-    res.json({ hotspots });
+    res.json(hotspots);
   } catch (err) {
     return next(err);
   }
@@ -32,7 +32,7 @@ router.get("/", async (req, res, next) => {
 router.get("/:id", async (req, res, next) => {
   try {
     const hotspot = await Hotspot.findOne(req.params.id);
-    res.json({ hotspot });
+    res.json(hotspot);
   } catch (err) {
     return next(err);
   }
@@ -50,7 +50,7 @@ router.put("/:id", async (req, res, next) => {
       );
     }
     const hotspot = await Hotspot.update(req.params.id, req.body);
-    return res.json({ hotspot });
+    return res.json(hotspot);
   } catch (err) {
     return next(err);
   }

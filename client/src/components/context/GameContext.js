@@ -8,13 +8,10 @@ const GameProvider = ({ children }) => {
   const [tasks, setTasks] = useState([]);
   const [hotspots, setHotspots] = useState([]);
 
-  const [score, setScore] = useState(0);
-
   const fetchGames = async () => {
     try {
       const resp = await GameApi.get("/api/v1/games");
-      console.log(resp.data.games);
-      let games = resp.data.games;
+      let games = resp.data;
       setGames(games);
       console.log(games);
     } catch (error) {
@@ -25,25 +22,23 @@ const GameProvider = ({ children }) => {
   const fetchTasks = async () => {
     try {
       const resp = await GameApi.get(`/api/v1/tasks`);
-      // console.log(resp.data.tasks);
-      let tasks = resp.data.tasks;
+      let tasks = resp.data;
       setTasks(tasks);
       console.log(tasks);
     } catch (error) {
       console.log(error);
     }
   };
-  const fetchHotspots = async () => {
-    try {
-      const resp = await GameApi.get(`/api/v1/hotspots`);
-      // console.log(resp.data.hotspots);
-      let hotspots = resp.data.hotspots;
-      setHotspots(hotspots);
-      console.log(hotspots);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const fetchHotspots = async () => {
+  //   try {
+  //     const resp = await GameApi.get(`/api/v1/hotspots`);
+  //     let hotspots = resp.data;
+  //     setHotspots(hotspots);
+  //     console.log(hotspots);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   useEffect(() => {
     fetchGames();
@@ -53,9 +48,9 @@ const GameProvider = ({ children }) => {
     fetchTasks();
   }, []);
 
-  useEffect(() => {
-    fetchHotspots();
-  }, []);
+  // useEffect(() => {
+  //   fetchHotspots();
+  // }, []);
 
   return (
     <GameContext.Provider
@@ -64,10 +59,8 @@ const GameProvider = ({ children }) => {
         setGames,
         tasks,
         setTasks,
-        score,
-        setScore,
-        hotspots,
-        setHotspots,
+        // hotspots,
+        // setHotspots,
       }}>
       {children}
     </GameContext.Provider>

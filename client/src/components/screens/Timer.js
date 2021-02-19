@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { GameContext } from "../context/GameContext";
 
-const Timer = ({ taskNumber, numberOfAnswers, gameId }) => {
-  const { score } = React.useContext(GameContext);
-  // console.log(games);
-  // console.log(tasks);
+const Timer = ({ taskNumber, numberOfAnswers, gameId, score }) => {
   console.log(score);
 
   const [timer, setTimer] = useState(10);
@@ -18,10 +14,10 @@ const Timer = ({ taskNumber, numberOfAnswers, gameId }) => {
       } else {
         clearInterval(interval);
         if (score < numberOfAnswers) {
-          // console.log(`tasknum-${taskNumber}`);
-          // console.log(`numberOfAnswers-${numberOfAnswers}`);
-          // console.log(`updateScore-${score}`);
-          return history.push(`/timesup/${gameId}/${taskNumber}`, taskNumber);
+          return history.push(
+            `/timesup/games/${gameId}/tasks/${taskNumber}`,
+            taskNumber,
+          );
         } else {
           return history.push(
             `/reading-the-room/games/${gameId}/tasks/${taskNumber}/page/3`,

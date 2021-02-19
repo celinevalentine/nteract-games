@@ -10,10 +10,6 @@ import Login from "./components/screens/Login";
 import PrivateRoute from "./components/screens/PrivateRoute";
 import AuthWrapper from "./components/screens/AuthWrapper";
 import FailScreen from "./components/screens/FailScreen";
-import DuringTask from "./components/screens/DuringTask";
-import EndTask from "./components/screens/EndTask";
-import StartTask from "./components/screens/StartTask";
-import StartGame from "./components/screens/StartGame";
 
 function App() {
   return (
@@ -22,11 +18,7 @@ function App() {
         <Router>
           <Switch>
             <Route path="/reading-the-room/games/:gameId/tasks/:taskNumber/page/:pageNumber">
-              {/* <TaskPage /> */}
-              {/* <StartGame /> */}
-              {/* <StartTask /> */}
-              <DuringTask />
-              {/* <EndTask /> */}
+              <TaskPage />
             </Route>
             <Route exact path="/reading-the-room/games">
               <Games />
@@ -40,7 +32,7 @@ function App() {
             <Route path="/login">
               <Login />
             </Route>
-            <Route exact path="/timesup/:gameId/:taskNumber">
+            <Route exact path="/timesup/games/:gameId/tasks/:taskNumber">
               <FailScreen />
             </Route>
             <Route path="*">

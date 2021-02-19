@@ -43,7 +43,6 @@ const TaskPage = () => {
           pageNumber={pageNumber}
         />
       );
-    //end of game when taskNumber=5, render EndGame
 
     default:
       return null;
