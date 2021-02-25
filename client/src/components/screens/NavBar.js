@@ -10,12 +10,10 @@ const Navbar = () => {
     user,
     isLoading,
   } = useAuth0();
-  // console.log({ isAuthenticated, user, isLoading });
   const isUser = isAuthenticated && user;
 
   return (
     <Wrapper>
-      {/* {isUser && user.picture && <img src={user.picture} alt={user.name} />} */}
       {isUser && user.name && (
         <h4>
           Welcome, <strong>{user.name.toUpperCase()}</strong>
@@ -48,6 +46,7 @@ const Wrapper = styled.nav`
   h4 {
     margin-bottom: 0;
     font-weight: 400;
+    color: #ffbd59;
   }
   img {
     width: 35px !important;
@@ -56,7 +55,7 @@ const Wrapper = styled.nav`
     object-fit: cover;
   }
   button {
-    background: lightblue;
+    background: lightgreen;
     border: transparent;
     font-size: 1.2rem;
     text-transform: capitalize;

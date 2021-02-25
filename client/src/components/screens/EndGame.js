@@ -6,15 +6,15 @@ import { GameContext } from "../context/GameContext";
 
 const EndGame = () => {
   const { games, tasks } = React.useContext(GameContext);
-  const { gameId, taskId, pageNumber } = useParams();
+  const { gameId, taskNumber, pageNumber } = useParams();
 
   console.log("p", pageNumber);
-  console.log("t", taskId);
+  console.log("t", taskNumber);
   console.log("g", gameId);
 
-  const task = tasks[taskId - 1];
+  const task = tasks[taskNumber - 1];
   const game = games[gameId - 1];
-  console.log(task);
+  console.log(task && task.closer);
   return (
     <div>
       <PromptBox

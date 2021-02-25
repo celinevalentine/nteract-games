@@ -1,69 +1,54 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# nteract games
 
-## Available Scripts
+  <a href="">
+Project Deployment Site</a>
 
-In the project directory, you can run:
+### Built With
 
-### `npm start`
+* React
+* Node.JS
+* PostgreSQL
+* Express
+* Axios
+* HTML
+* CSS
+  
+### Create Local Envrionment (For Developers)
+1. Clone the repo
+```sh
+git clone 
+https://github.com/celinevalentine/nteract-games
+```
+2. Install dependencies
+```sh
+npm install
+```
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3. Run in your local environment
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+```sh
+http://localhost:3000
+npm start
+```
 
-### `npm test`
+### Userflow
+Upon logging into the account, users can choose one a game to play. By following through the prompts, users can complete each task of the game. If users don't answer correctly 100%, the screen will take them back to the beginning of the task to complete. Each task is timed and will automatically proceed to the next page once the timer is up.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+The purpose of the project is to help young students and enterprenures improve their social skills. By completing each game, users will increase their awareness of surroudings, social etiquettes and people interactions in various social scenarios and events. Each game has 5 tasks and each task has embedded timer and invisible hotspots to click. Auth0 is used to for user authentication and authorization.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## DATA
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The app has a customized RESTful API with Node, Express and PostgreSQL (a.k.a, pg)that provides information about each game, tasks and hotspots. Having such an API, it helps improve the readability and scability of the code. It allows to create addiontional game modules with very little effort. With use of Postman, all games, tasks and hotspots are capable of being retrieved, created, updated, and deleted. 
 
-### `npm run eject`
+## Stretch Goals
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+I plan to continue building more game modules that require additional data structures and schemas added to the database. In additional, I also plan to add more features on user's profile page where users can see their game performance such as the time that took to complete the game and games that have been completed with customized badgers. Users can also share their game results via social media links. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contact
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Celine Valentine - [@celineval3](https://twitter.com/celineval3) - cyv419@gmail.com
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# nteract-games
+Source Code Link: [https://github.com/celinevalentine/nteract-games]()

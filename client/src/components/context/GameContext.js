@@ -6,7 +6,6 @@ const GameContext = React.createContext();
 const GameProvider = ({ children }) => {
   const [games, setGames] = useState([]);
   const [tasks, setTasks] = useState([]);
-  const [hotspots, setHotspots] = useState([]);
 
   const fetchGames = async () => {
     try {
@@ -29,16 +28,6 @@ const GameProvider = ({ children }) => {
       console.log(error);
     }
   };
-  // const fetchHotspots = async () => {
-  //   try {
-  //     const resp = await GameApi.get(`/api/v1/hotspots`);
-  //     let hotspots = resp.data;
-  //     setHotspots(hotspots);
-  //     console.log(hotspots);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   useEffect(() => {
     fetchGames();
@@ -48,10 +37,6 @@ const GameProvider = ({ children }) => {
     fetchTasks();
   }, []);
 
-  // useEffect(() => {
-  //   fetchHotspots();
-  // }, []);
-
   return (
     <GameContext.Provider
       value={{
@@ -59,8 +44,6 @@ const GameProvider = ({ children }) => {
         setGames,
         tasks,
         setTasks,
-        // hotspots,
-        // setHotspots,
       }}>
       {children}
     </GameContext.Provider>

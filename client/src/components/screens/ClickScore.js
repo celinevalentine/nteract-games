@@ -1,6 +1,7 @@
 import React from "react";
 import scoreBox from "../../images/scoreBox.png";
 import Hotspot from "./Hotspot";
+import styled from "styled-components";
 
 const ClickScore = ({
   taskNumber,
@@ -26,10 +27,10 @@ const ClickScore = ({
   };
   return (
     <>
-      <div>
+      <Wrapper>
         <img className="score-box" src={scoreBox} alt="score-box" />
         <p id="score">{`${score}/${numberOfAnswers}`}</p>
-      </div>
+      </Wrapper>
 
       {hotspots &&
         hotspots.map((h, i) => (
@@ -50,3 +51,18 @@ const ClickScore = ({
 };
 
 export default ClickScore;
+const Wrapper = styled.div`
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 50px;
+  width: 50px;
+
+  img {
+    z-index: 5;
+  }
+
+  p {
+    z-index: 9;
+  }
+`;

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import Button from "./Button";
-import chair from "../../images/chair.png";
+
 import ellipse from "../../images/ellipse.svg";
-import ellipseLight from "../../images/ellipseLight.svg";
+import ellipseDark from "../../images/ellipseLight.svg";
+import styled from "styled-components";
+import ToggleViewLeft from "./ToggleViewLeft";
+import ToggleViewRight from "./ToggleViewRight";
+import LeftArrow from "./LeftArrow";
 
 const Intro = () => {
   const [toggleView, setToggleView] = useState(false);
@@ -12,44 +14,58 @@ const Intro = () => {
     setToggleView(!toggleView);
   };
   return (
-    <>
-      <section>
-        <h1 className="text-center">Reading The Room</h1>
-        {toggleView ? (
-          <div id="screen1">
-            <img id="chair" src={chair} alt="chair" />
-            <p className="gameIntroWords">
-              {" "}
-              Being mindful of your surroundings can help make you more
-              comfortable in new environments.
-            </p>
-            <Link to="/reading-the-room/games">
-              <Button btnClass="inGameButtonDiv" name="Continue" />
-            </Link>
-          </div>
-        ) : (
-          <div id="screen2">
-            <img id="chair2" src={chair} alt="chair" />
-            <p className="gameIntroWords">
-              {" "}
-              In this game, your goal is to complete 5 different tasks before
-              the timer runs out.
-            </p>
-          </div>
-        )}
+    <Wrapper>
+      <LeftArrow />
+      <h1>Reading The Room</h1>
+      {toggleView ? <ToggleViewLeft /> : <ToggleViewRight />}
 
-        <div className="ellipses">
-          <img id="ellipse" src={ellipse} alt="elipse" onClick={clickHandler} />
-          <img
-            id="ellipseLight"
-            src={ellipseLight}
-            alt="elipse light"
-            onClick={clickHandler}
-          />
-        </div>
-      </section>
-    </>
+      <div className="circleButtons">
+        <img
+          className="lightCircle"
+          src={ellipse}
+          alt="button 2"
+          onClick={clickHandler}
+        />
+        <img
+          className="darkCircle"
+          src={ellipseDark}
+          alt="button 1"
+          onClick={clickHandler}
+        />
+      </div>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+
+  min-height: 80vh;
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  }
+  h1 {
+    margin: 5rem auto;
+    font: var(--ff-ternary);
+    text-align:center;
+    font-size: 46px; 
+  }
+  .circleButtons {
+    margin-top: -7rem;
+  }
+.darkCircle {
+  margin-left: 1rem;
+  background: #ececec;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.lightCircle {
+  border-radius: 10px;
+  background: #b7b7b7;
+  cursor: pointer;
+} 
+
+`;
 
 export default Intro;

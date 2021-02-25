@@ -1,50 +1,20 @@
 /*
 =============== 
-Fonts
-===============
-*/
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
-
-/*
-=============== 
 Variables
 ===============
 */
 
 :root {
   /* dark shades of primary color*/
-  --clr-primary-1: hsl(185, 91%, 17%);
-  --clr-primary-2: hsl(185, 84%, 25%);
-  --clr-primary-3: hsl(185, 81%, 29%);
-  --clr-primary-4: hsl(185, 77%, 34%);
-  /* primary/main color */
-  --clr-primary-5: hsl(185, 62%, 45%);
-  /* lighter shades of primary color */
-  --clr-primary-6: hsl(185, 57%, 50%);
-  --clr-primary-7: hsl(184, 65%, 59%);
-  --clr-primary-8: hsl(184, 80%, 74%);
-  --clr-primary-9: hsl(185, 94%, 87%);
-  --clr-primary-10: hsl(186, 100%, 94%);
-  /* darkest grey - used for headings */
-  --clr-grey-1: hsl(209, 61%, 16%);
-  --clr-grey-2: hsl(211, 39%, 23%);
-  --clr-grey-3: hsl(209, 34%, 30%);
-  --clr-grey-4: hsl(209, 28%, 39%);
-  /* grey used for paragraphs */
-  --clr-grey-5: hsl(210, 22%, 49%);
-  --clr-grey-6: hsl(209, 23%, 60%);
-  --clr-grey-7: hsl(211, 27%, 70%);
-  --clr-grey-8: hsl(210, 31%, 80%);
-  --clr-grey-9: hsl(212, 33%, 89%);
-  --clr-grey-10: #f1f5f8;
-  --clr-white: #fff;
-  --clr-red-dark: hsl(360, 67%, 44%);
-  --clr-red-light: hsl(360, 71%, 66%);
-  --clr-green-dark: hsl(125, 67%, 44%);
-  --clr-green-light: hsl(125, 71%, 66%);
-  --clr-black: #222;
+  --clr-continue: #ffbd59;
+  --clr-main: #9cc8cd;
+  --clr-try: #7fca60;
+  --clr-play: #ff66c1;
+
   --ff-primary: "Roboto", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
+  --ff-ternary: "Baloo 2", cursive;
+
   --transition: all 0.3s linear;
   --spacing: 0.1rem;
   --radius: 0.25rem;
@@ -53,11 +23,10 @@ Variables
   --max-width: 1170px;
   --fixed-width: 620px;
 }
-/*
-=============== 
-Global Styles
-===============
-*/
+
+/* =============== 
+   Global Styles
+=============== */
 
 *,
 ::after,
@@ -66,10 +35,9 @@ Global Styles
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: var(--ff-secondary);
-  background: var(--clr-grey-10);
-  color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
 }
@@ -79,21 +47,21 @@ ul {
 a {
   text-decoration: none;
 }
-img {
-  width: 100%;
+/* img {
+  width: 30%;
   display: block;
-}
+} */
 
 h1,
 h2,
 h3,
-h4 {
+/* h4 {
   letter-spacing: var(--spacing);
   text-transform: capitalize;
   line-height: 1.25;
   margin-bottom: 0.75rem;
   font-family: var(--ff-primary);
-}
+} */
 h1 {
   font-size: 3rem;
 }
@@ -108,7 +76,7 @@ h4 {
 }
 p {
   margin-bottom: 1.25rem;
-  color: var(--clr-grey-5);
+  color: var(--clr-black);
 }
 @media screen and (min-width: 800px) {
   h1 {
@@ -137,22 +105,23 @@ p {
 
 .btn {
   text-transform: uppercase;
-  background: var(--clr-primary-5);
-  color: var(--clr-primary-10);
-  padding: 0.375rem 0.75rem;
+  color: black;
+  font-family: var(--ff-secondary);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 33px;
+  padding: 0.75rem 3rem;
   letter-spacing: var(--spacing);
   display: inline-block;
-  font-weight: 400;
   transition: var(--transition);
-  font-size: 0.875rem;
   border: 2px solid transparent;
   cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  border-radius: var(--radius);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
 }
 .btn:hover {
-  background: var(--clr-primary-8);
-  color: var(--clr-primary-1);
+  color: whitesmoke;
 }
 
 /* section */
@@ -171,13 +140,13 @@ p {
     width: 95vw;
   }
 }
-.loading-img {
+/* .loading-img {
   width: 20rem;
   height: 20rem;
   display: block;
   margin: 0 auto;
   margin-top: 10rem;
-}
+} */
 main {
   padding-bottom: 2rem;
 }
@@ -192,25 +161,27 @@ body {
   padding: 2rem;
 }
 
-button {
+/* button {
   margin: 2rem 0;
   padding: 1rem 2rem;
   width: 120px;
   cursor: pointer;
-}
+} */
 .App {
   text-align: center;
 }
-
-÷ .container {
+/* .container {
   position: relative;
-}
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+} */
 /* .App-link {
   color: #61dafb;
 } */
 
 /* readingtheroom screen */
-.gameIntroTitle {
+/* .gameIntroTitle {
   position: absolute;
   height: 69px;
   width: 370px;
@@ -241,8 +212,8 @@ button {
   text-align: center;
 
   color: #000000;
-}
-#chair {
+} */
+/* #chair {
   position: absolute;
   height: 273px;
   width: 360px;
@@ -257,8 +228,8 @@ button {
   left: 550px;
   top: 144px;
   border-radius: 0px;
-}
-.ellipses {
+} */
+/* .circleButtons {
   position: absolute;
   height: 13px;
   width: 44px;
@@ -267,8 +238,8 @@ button {
   border-radius: 0px;
   cursor: pointer;
   text-align: center;
-}
-#ellipseLight {
+} */
+/* .darkCircle {
   position: absolute;
   height: 13px;
   width: 13px;
@@ -280,7 +251,7 @@ button {
 
   background: #ececec;
 }
-#ellipse {
+.lightCircle {
   position: absolute;
   height: 13px;
   width: 13px;
@@ -289,10 +260,11 @@ button {
   border-radius: 10px;
 
   background: #b7b7b7;
-}
+} */
+
 /* tableOfContents */
-#choose-scenario {
-  /* Choose a Scenario */
+/* #choose-scenario {
+  
   position: absolute;
   width: 498px;
   height: 75px;
@@ -304,13 +276,13 @@ button {
   font-weight: bold;
   font-size: 55px;
   line-height: 75px;
-  /* identical to box height */
+ 
   text-align: center;
 
   color: #000000;
-}
+} */
 
-#in-person-event {
+/* #in-person-event {
   position: absolute;
   width: 280px;
   height: 269px;
@@ -320,7 +292,7 @@ button {
 #zoom-call-icon {
   position: absolute;
   width: 280px;
-  height: 300.54px;
+  height: 301px;
   left: 308px;
   top: 113px;
 }
@@ -330,28 +302,28 @@ button {
   height: 285px;
   left: 598px;
   top: 113px;
-}
+} */
 /* zoomstart */
-.backgroundImage {
+/* .backgroundImage {
   position: relative;
   width: 895px;
   height: 393px;
   left: 3px;
   top: 13px;
-}
-.promptbox {
+} */
+/* .promptbox {
   position: absolute;
-  height: 263.6700744628906px;
+  height: 264px;
   width: 435px;
   left: 225px;
   top: 71px;
   border-radius: 0px;
 
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-.promptbox-title {
+} */
+/* .promptbox-title {
   position: absolute;
-  height: 263.6700744628906px;
+  height: 264px;
   width: 435px;
   left: 10px;
   top: 10px;
@@ -365,11 +337,11 @@ button {
   text-align: center;
 
   color: #000000;
-}
-.promptbox-msg {
+} */
+/* .promptbox-msg {
   position: absolute;
-  height: 47.83395004272461px;
-  width: 276.9230651855469px;
+  height: 48px;
+  width: 277px;
   left: 58px;
   top: 90px;
   border-radius: nullpx;
@@ -389,13 +361,13 @@ button {
   word-break: break-word;
 
   color: #000000;
-}
+} */
 
-.inGameButtonDiv {
+/* .inGameButtonDiv {
   cursor: pointer;
   position: absolute;
-  height: 45.500579833984375px;
-  width: 256.15386962890625px;
+  height: 46px;
+  width: 256px;
   left: 310px;
   top: 270px;
   border-radius: 10px;
@@ -421,7 +393,7 @@ button {
   text-align: center;
   border-radius: nullpx;
   cursor: pointer;
-}
+} */
 .mainMenuButtonDiv {
   background: #9cc8cd;
   border-radius: 10px;
@@ -498,15 +470,14 @@ button {
   z-index: 2;
 }
 
-.left-arrow {
+/* .left-arrow {
   z-index: 1;
   position: absolute;
-  height: 51px;
+  /* height: 51px;
   width: 51px;
   left: 6px;
-  top: 13px;
-  border-radius: 0px;
-}
+  top: 13px; */
+
 /* zoomcall1 */
 .promptbox-protips {
   position: absolute;
@@ -529,7 +500,7 @@ button {
   word-break: break-all;
   word-break: break-word;
 }
-.promptbox-task {
+/* .promptbox-task {
   position: absolute;
   height: 33px;
   width: 259px;
@@ -547,7 +518,7 @@ button {
 
   color: #000000;
   z-index: 2;
-}
+} */
 /* zoomcall2countdown */
 .countdown {
   /* 10 */
@@ -596,19 +567,4 @@ button {
   z-index: 2;
 
   color: #000000;
-}
-#iframe {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
-  background: red; */
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
-  border-radius: 10px;
-  border: rgb(255, 225, 0) solid 10px;
 }

@@ -4,6 +4,9 @@ import Button from "./Button";
 import PromptBox from "./PromptBox";
 import LeftArrow from "./LeftArrow";
 import GameApi from "../apis/GameApi";
+import { StyledArrow } from "./StyledArrow";
+import { StyledImgWrapper } from "./StyledImgWrapper";
+import { StyledCtdBtn } from "./StyledCtdBtn";
 
 function StartGame() {
   const { gameId, taskNumber, pageNumber } = useParams();
@@ -28,22 +31,24 @@ function StartGame() {
   let task = tasks && tasks[taskNumber];
   console.log(task);
 
-  // console.log(task.task_number);
-
   return (
-    <div>
+    <StyledImgWrapper>
       <img src={task && task.img_url} alt="" />
       <PromptBox title={game && game.game_name} msg={task && task.opener} />
-      <Link to="/">
-        <LeftArrow />
-      </Link>
-      <Link
-        to={`/reading-the-room/games/${game.id}/tasks/${
-          parseInt(taskNumber) + 1
-        }/page/${parseInt(pageNumber) + 1}`}>
-        <Button btnClass="inGameButtonDiv" name="Continue" />
-      </Link>
-    </div>
+      <StyledArrow>
+        <Link to="/">
+          <LeftArrow />
+        </Link>
+      </StyledArrow>
+      <StyledCtdBtn>
+        <Link
+          to={`/reading-the-room/games/${game.id}/tasks/${
+            parseInt(taskNumber) + 1
+          }/page/${parseInt(pageNumber) + 1}`}>
+          <Button backgroundColor={`var(--clr-continue)`} name="Continue" />
+        </Link>
+      </StyledCtdBtn>
+    </StyledImgWrapper>
   );
 }
 

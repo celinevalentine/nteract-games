@@ -1,12 +1,10 @@
 import React from "react";
 
-const Button = ({ btnClass, spanId, name }) => {
+const Button = ({ name, backgroundColor }) => {
   return (
-    <div>
-      <button className={btnClass}>
-        <span id={spanId}>{name}</span>
-      </button>
-    </div>
+    <button className="btn" style={{ backgroundColor: backgroundColor }}>
+      {name}
+    </button>
   );
 };
 

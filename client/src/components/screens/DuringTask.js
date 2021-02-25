@@ -4,6 +4,8 @@ import { Link, useParams } from "react-router-dom";
 import Timer from "./Timer";
 import ClickScore from "./ClickScore";
 import GameApi from "../apis/GameApi";
+import { StyledArrow } from "./StyledArrow";
+import { StyledImgWrapper } from "./StyledImgWrapper";
 
 const DuringTask = () => {
   const [task, setTask] = useState([]);
@@ -43,11 +45,13 @@ const DuringTask = () => {
   console.log("hotspot", hotspotName);
 
   return (
-    <>
+    <StyledImgWrapper>
       <img src={task && task.img_url} alt="" />
-      <Link to="/">
-        <LeftArrow />
-      </Link>
+      <StyledArrow>
+        <Link to="/">
+          <LeftArrow />
+        </Link>
+      </StyledArrow>
       <Timer
         taskNumber={task && task.task_number}
         numberOfAnswers={task && task.num_answers}
@@ -62,7 +66,7 @@ const DuringTask = () => {
         score={score}
         setScore={setScore}
       />
-    </>
+    </StyledImgWrapper>
   );
 };
 
