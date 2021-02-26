@@ -77,7 +77,7 @@ const StyledPromptBoxDiv = styled.div`
 
 const StyledPromptBox = styled.div`
   z-index: 5;
-  width: 92%;
+  width: 70%;
   height: 100%;
   position: absolute;
   left: 48%;
@@ -123,6 +123,6 @@ const StyledBtn = styled(Link)`
   z-index: 9;
   position: absolute;
   left: 50%;
-  top: 28%;
+  top: 32%;
   transform: translate(-50%, -50%);
 `;

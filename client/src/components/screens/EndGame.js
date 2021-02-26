@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { GameContext } from "../context/GameContext";
 import { PromptBox, Button } from "..";
-import { Wrapper, StyledPromptBox, StyledButtons } from "./EndWrapper";
+import { StyledPromptBox, StyledButtons } from "./EndWrapper";
 
 const EndGame = () => {
   const { games, tasks } = React.useContext(GameContext);
@@ -16,7 +16,7 @@ const EndGame = () => {
   const game = games[gameId - 1];
   console.log(task && task.closer);
   return (
-    <Wrapper>
+    <div>
       <StyledPromptBox>
         <PromptBox
           title={task && task.closer}
@@ -31,7 +31,7 @@ const EndGame = () => {
           <Button backgroundColor={`var(--clr-play)`} name="play again" />
         </Link>
       </StyledButtons>
-    </Wrapper>
+    </div>
   );
 };
 

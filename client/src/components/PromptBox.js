@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   height: 100%;
   position: absolute;
   left: 48%;
-  top: 50%;
+  top: 55%;
   margin: 2rem 2rem;
   transform: translate(-50%, -50%);
   display: block;
@@ -47,7 +47,8 @@ const Wrapper = styled.div`
     z-index: 9;
     position: absolute;
     left: 50%;
-    top: 40%;
+    top: 39%;
+    width: 60%;
     transform: translate(-50%, -50%);
   }
   p {
@@ -61,7 +62,7 @@ const Wrapper = styled.div`
     position: absolute;
     left: 50%;
     top: 30%;
-    width: 40%;
+    width: 55%;
     height: 50%;
     transform: translate(-50%, -50%);
   }

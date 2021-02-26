@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { PromptBox, Button } from "..";
 import { Link, useParams } from "react-router-dom";
 import { GameContext } from "../context/GameContext";
-import { Wrapper, StyledPromptBox, StyledButtons } from "./EndWrapper";
+import { StyledPromptBox, StyledButtons } from "./EndWrapper";
 
 const FailScreen = () => {
   const { gameId, taskNumber } = useParams();
@@ -14,7 +14,7 @@ const FailScreen = () => {
   const { task_number } = task;
 
   return (
-    <Wrapper>
+    <div>
       <StyledPromptBox>
         <PromptBox
           title="Time's Up!"
@@ -29,7 +29,7 @@ const FailScreen = () => {
           <Button backgroundColor={`var(--clr-main)`} name="main menu" />
         </Link>
       </StyledButtons>
-    </Wrapper>
+    </div>
   );
 };
 

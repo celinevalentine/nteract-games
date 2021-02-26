@@ -4,6 +4,7 @@ import chair from "../../images/chair.png";
 
 import styled from "styled-components";
 import { Button } from "..";
+import StyledCtdBtn from "../StyledCtdBtn";
 
 const ToggleViewRight = () => {
   return (
@@ -14,11 +15,11 @@ const ToggleViewRight = () => {
         timer runs out.{" "}
       </p>
       <img src={chair} alt="chair" />
-      <StyledBtn>
+      <StyledCtdBtn>
         <Link to="/reading-the-room/games">
           <Button name="continue" backgroundColor={`var(--clr-continue)`} />
         </Link>
-      </StyledBtn>
+      </StyledCtdBtn>
     </Wrapper>
   );
 };
@@ -50,10 +51,6 @@ const Wrapper = styled.div`
     min-width: 350px;
     vertical-align: top;
   }
-`;
-
-const StyledBtn = styled(Link)`
-  z-index: 9;
 `;
 
 export default ToggleViewRight;

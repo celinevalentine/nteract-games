@@ -104,7 +104,8 @@ p {
   font-weight: normal;
   font-size: 20px;
   line-height: 33px;
-  padding: 0.75rem 3rem;
+  padding: 0.75rem 2rem;
+  margin-left: 0.75rem;
   letter-spacing: var(--spacing);
   display: inline-block;
   transition: var(--transition);

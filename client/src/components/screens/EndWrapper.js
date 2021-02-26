@@ -1,22 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Wrapper = styled.div`
-  z-index: 5;
-  display: block;
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  word-wrap: word-break;
-`;
-
 export const StyledPromptBox = styled.div`
   z-index: 5;
-  width: 92%;
+  width: 70%;
   height: 100%;
   position: absolute;
   left: 48%;
@@ -60,10 +47,8 @@ export const StyledPromptBox = styled.div`
 `;
 export const StyledButtons = styled(Link)`
   z-index: 9;
-  display: block;
   position: absolute;
   left: 49%;
-  top: 28%;
-  padding-left: 1rem;
+  top: 32%;
   transform: translate(-50%, -50%);
 `;

@@ -2,6 +2,7 @@ import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import styled from "styled-components";
 import turtles from "../images/turtles.png";
+
 const Login = () => {
   const { loginWithRedirect } = useAuth0();
   return (
@@ -25,15 +26,19 @@ const Wrapper = styled.section`
   justify-content: center;
   background-color: lightgreen;
   .container {
-    width: 90vw;
-    max-width: 600px;
+    width: 80vw;
+    max-width: 650px;
     text-align: center;
   }
   img {
-    margin-bottom: 2rem;
+    margin-top: -15rem;
   }
   h1 {
     margin-bottom: 4rem;
+  }
+  button {
+    margin-top: 6rem;
+    background-color: var(--clr-continue);
   }
 `;
 export default Login;
