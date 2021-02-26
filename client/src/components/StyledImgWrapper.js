@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledImgWrapper = styled.div`
+const StyledImgWrapper = styled.div`
   width: 960px;
   text-align: center;
   position: relative;
@@ -11,3 +11,4 @@ export const StyledImgWrapper = styled.div`
   margin: auto;
   display: block;
 `;
+export default StyledImgWrapper;

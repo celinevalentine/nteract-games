@@ -1,15 +1,14 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-
-import Home from "./components/screens/Home";
-import Games from "./components/screens/Games";
-import TaskPage from "./components/screens/TaskPage";
-import Intro from "./components/screens/Intro";
-import Error from "./components/screens/Error";
-import Login from "./components/screens/Login";
-import PrivateRoute from "./components/screens/PrivateRoute";
-import AuthWrapper from "./components/screens/AuthWrapper";
-import FailScreen from "./components/screens/FailScreen";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { AuthWrapper, Login, PrivateRoute } from "./components";
+import {
+  Games,
+  FailScreen,
+  Intro,
+  Error,
+  TaskPage,
+  Home,
+} from "./components/screens";
 
 function App() {
   return (

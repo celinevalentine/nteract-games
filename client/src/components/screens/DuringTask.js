@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
-import LeftArrow from "./LeftArrow";
 import { useParams } from "react-router-dom";
-import Timer from "./Timer";
-import ClickScore from "./ClickScore";
 import GameApi from "../apis/GameApi";
-import { StyledArrow } from "./StyledArrow";
-import { StyledImgWrapper } from "./StyledImgWrapper";
+import { StyledImgWrapper, Timer, ClickScore } from "..";
 
 const DuringTask = () => {
   const [task, setTask] = useState([]);

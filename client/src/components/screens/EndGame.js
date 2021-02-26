@@ -1,8 +1,7 @@
 import React from "react";
-import PromptBox from "./PromptBox";
-import Button from "./Button";
 import { Link, useParams } from "react-router-dom";
 import { GameContext } from "../context/GameContext";
+import { PromptBox, Button } from "..";
 import { Wrapper, StyledPromptBox, StyledButtons } from "./EndWrapper";
 
 const EndGame = () => {

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const StyledArrow = styled(Link)`
+const StyledArrow = styled(Link)`
   z-index: 9;
   position: absolute;
   width: 100px;
@@ -10,3 +10,5 @@ export const StyledArrow = styled(Link)`
   left: 25px;
   cursor: pointer;
 `;
+
+export default StyledArrow;

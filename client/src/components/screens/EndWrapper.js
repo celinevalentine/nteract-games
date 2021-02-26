@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
 
 export const StyledPromptBox = styled.div`
   z-index: 5;
-  width: 75%;
+  width: 92%;
   height: 100%;
   position: absolute;
   left: 48%;

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import Button from "./Button";
-import PromptBox from "./PromptBox";
-import LeftArrow from "./LeftArrow";
 import GameApi from "../apis/GameApi";
-import { StyledArrow } from "./StyledArrow";
-import { StyledCtdBtn } from "./StyledCtdBtn";
-import { StyledImgWrapper } from "./StyledImgWrapper";
+import {
+  PromptBox,
+  Button,
+  StyledArrow,
+  StyledImgWrapper,
+  StyledCtdBtn,
+} from "..";
+import LeftArrow from "../LeftArrow";
 
 function StartTask() {
   const { gameId, taskNumber, pageNumber } = useParams();

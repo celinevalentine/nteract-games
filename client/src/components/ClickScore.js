@@ -1,5 +1,5 @@
 import React from "react";
-import scoreBox from "../../images/scoreBox.png";
+import scoreBox from "../images/scoreBox.png";
 import Hotspot from "./Hotspot";
 import styled from "styled-components";
 

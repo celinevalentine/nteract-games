@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
-import PromptBox from "./PromptBox";
-import Button from "./Button";
+import { PromptBox, Button } from "..";
 import { Link, useParams } from "react-router-dom";
 import { GameContext } from "../context/GameContext";
 import { Wrapper, StyledPromptBox, StyledButtons } from "./EndWrapper";
@@ -13,9 +12,6 @@ const FailScreen = () => {
   const { id } = game;
 
   const { task_number } = task;
-
-  // const history = useHistory();
-  // console.log(history.location.state);
 
   return (
     <Wrapper>

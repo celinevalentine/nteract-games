@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import chair from "../../images/chair.png";
-import Button from "./Button";
+
 import styled from "styled-components";
+import { Button } from "..";
 
 const ToggleViewRight = () => {
   return (

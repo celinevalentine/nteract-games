@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-
 import ellipse from "../../images/ellipse.svg";
 import ellipseDark from "../../images/ellipseLight.svg";
 import styled from "styled-components";
-import ToggleViewLeft from "./ToggleViewLeft";
-import ToggleViewRight from "./ToggleViewRight";
-import LeftArrow from "./LeftArrow";
+import { ToggleViewLeft, ToggleViewRight } from ".";
+import LeftArrow from "../LeftArrow";
 
 const Intro = () => {
   const [toggleView, setToggleView] = useState(false);

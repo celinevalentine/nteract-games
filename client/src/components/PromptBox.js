@@ -1,5 +1,5 @@
 import React from "react";
-import promptbox from "../../images/promptbox.png";
+import promptbox from "../images/promptbox.png";
 import styled from "styled-components";
 
 const PromptBox = ({ title, msg, proTips, task }) => {

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import PromptBox from "./PromptBox";
-import Button from "./Button";
+import { PromptBox, Button } from "..";
 import GameApi from "../apis/GameApi";
 import { Link, useParams } from "react-router-dom";
 import EndGame from "./EndGame";
@@ -78,7 +77,7 @@ const StyledPromptBoxDiv = styled.div`
 
 const StyledPromptBox = styled.div`
   z-index: 5;
-  width: 75%;
+  width: 92%;
   height: 100%;
   position: absolute;
   left: 48%;
@@ -92,10 +91,9 @@ const StyledPromptBox = styled.div`
     text-align: center;
     z-index: 9;
     position: absolute;
-    left: 45%;
+    left: 50%;
     top: 8%;
     transform: translate(-50%, -50%);
-    word-wrap: break-word;
   }
   small {
     font-family: var(--ff-primary);
@@ -124,7 +122,7 @@ const StyledPromptBox = styled.div`
 const StyledBtn = styled(Link)`
   z-index: 9;
   position: absolute;
-  left: 48%;
+  left: 50%;
   top: 28%;
   transform: translate(-50%, -50%);
 `;
