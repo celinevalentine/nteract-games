@@ -3,6 +3,7 @@ import PromptBox from "./PromptBox";
 import Button from "./Button";
 import { Link, useParams } from "react-router-dom";
 import { GameContext } from "../context/GameContext";
+import { Wrapper, StyledPromptBox, StyledButtons } from "./EndWrapper";
 
 const EndGame = () => {
   const { games, tasks } = React.useContext(GameContext);
@@ -16,26 +17,22 @@ const EndGame = () => {
   const game = games[gameId - 1];
   console.log(task && task.closer);
   return (
-    <div>
-      <PromptBox
-        title={task && task.closer}
-        msg="Congrats! You’ve completed the challenge."
-      />
-      <Link to="/">
-        <Button
-          btnClass="mainMenuButtonDiv"
-          spanId="main-menu-btn-name"
-          name="MAIN MENU"
+    <Wrapper>
+      <StyledPromptBox>
+        <PromptBox
+          title={task && task.closer}
+          msg="Congrats! You’ve completed the challenge."
         />
-      </Link>
-      <Link to={`/reading-the-room/games/${game && game.id}/task/0/page/0`}>
-        <Button
-          btnClass="playAgainButtonDiv"
-          spanId="play-again-btn-name"
-          name="PLAY AGAIN"
-        />
-      </Link>
-    </div>
+      </StyledPromptBox>
+      <StyledButtons>
+        <Link to="/">
+          <Button backgroundColor={`var(--clr-continue)`} name="Continue" />
+        </Link>
+        <Link to={`/reading-the-room/games/${game && game.id}/task/0/page/0`}>
+          <Button backgroundColor={`var(--clr-play)`} name="play again" />
+        </Link>
+      </StyledButtons>
+    </Wrapper>
   );
 };
 

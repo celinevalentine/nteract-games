@@ -28,8 +28,8 @@ const ClickScore = ({
   return (
     <>
       <Wrapper>
-        <img className="score-box" src={scoreBox} alt="score-box" />
-        <p id="score">{`${score}/${numberOfAnswers}`}</p>
+        <img src={scoreBox} alt="score-box" />
+        <p>{`${score}/${numberOfAnswers}`}</p>
       </Wrapper>
 
       {hotspots &&
@@ -52,17 +52,31 @@ const ClickScore = ({
 
 export default ClickScore;
 const Wrapper = styled.div`
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 50px;
-  width: 50px;
+  z-index: 9;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: -9px;
+  left: 28px;
 
   img {
     z-index: 5;
+    position: absolute;
+    width: 78px;
+    height: 35px;
+    left: 810px;
+    top: 33px;
   }
 
   p {
     z-index: 9;
+    position: absolute;
+    height: 35px;
+    width: 47px;
+    left: 830px;
+    top: 29px;
+    font-size: 30px;
+    line-height: 35px;
+    font-family: var(--ff-primary);
   }
 `;

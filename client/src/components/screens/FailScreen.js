@@ -3,6 +3,7 @@ import PromptBox from "./PromptBox";
 import Button from "./Button";
 import { Link, useParams } from "react-router-dom";
 import { GameContext } from "../context/GameContext";
+import { Wrapper, StyledPromptBox, StyledButtons } from "./EndWrapper";
 
 const FailScreen = () => {
   const { gameId, taskNumber } = useParams();
@@ -17,26 +18,22 @@ const FailScreen = () => {
   // console.log(history.location.state);
 
   return (
-    <div>
-      <PromptBox
-        title="Time's Up!"
-        msg="Oh no! You didn’t find all the answers"
-      />
-      <Link to={`/reading-the-room/games/${id}/tasks/${task_number}/page/1`}>
-        <Button
-          btnClass="tryAgainButtonDiv"
-          spanId="play-again-btn-name"
-          name="TRY AGAIN"
+    <Wrapper>
+      <StyledPromptBox>
+        <PromptBox
+          title="Time's Up!"
+          msg="Oh no! You didn’t find all the answers"
         />
-      </Link>
-      <Link to="/">
-        <Button
-          btnClass="mainMenuButtonDiv"
-          spanId="main-menu-btn-name"
-          name="MAIN MENU"
-        />
-      </Link>
-    </div>
+      </StyledPromptBox>
+      <StyledButtons>
+        <Link to={`/reading-the-room/games/${id}/tasks/${task_number}/page/1`}>
+          <Button backgroundColor={`var(--clr-try)`} name="try again" />
+        </Link>
+        <Link to="/">
+          <Button backgroundColor={`var(--clr-main)`} name="main menu" />
+        </Link>
+      </StyledButtons>
+    </Wrapper>
   );
 };
 

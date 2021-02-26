@@ -16,15 +16,15 @@ const PromptBox = ({ title, msg, proTips, task }) => {
 
 const Wrapper = styled.div`
   z-index: 5;
-  border-radius: 10px;
-  margin: 2rem;
-  padding: 2rem;
-  width: 100%;
+  width: 75%;
   height: 100%;
   position: absolute;
-  left: 40%;
+  left: 48%;
   top: 50%;
+  margin: 2rem 2rem;
   transform: translate(-50%, -50%);
+  display: block;
+  word-wrap: break-word;
 
   h3 {
     font-family: var(--ff-ternary);
@@ -60,7 +60,9 @@ const Wrapper = styled.div`
     z-index: 9;
     position: absolute;
     left: 50%;
-    top: 20%;
+    top: 30%;
+    width: 40%;
+    height: 50%;
     transform: translate(-50%, -50%);
   }
   small {
@@ -73,6 +75,15 @@ const Wrapper = styled.div`
     left: 50%;
     top: 40%;
     transform: translate(-50%, -50%);
+  }
+  img {
+    width: 70%;
+    min-height: 100px;
+    left: 50%;
+    top: 32%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    margin-top: 1rem;
   }
 `;
 

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledImgWrapper = styled.div`
-  width: 100vw;
+  width: 960px;
   text-align: center;
   position: relative;
   top: 0;

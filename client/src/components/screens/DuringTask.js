@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import LeftArrow from "./LeftArrow";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Timer from "./Timer";
 import ClickScore from "./ClickScore";
 import GameApi from "../apis/GameApi";
@@ -47,11 +47,6 @@ const DuringTask = () => {
   return (
     <StyledImgWrapper>
       <img src={task && task.img_url} alt="" />
-      <StyledArrow>
-        <Link to="/">
-          <LeftArrow />
-        </Link>
-      </StyledArrow>
       <Timer
         taskNumber={task && task.task_number}
         numberOfAnswers={task && task.num_answers}
