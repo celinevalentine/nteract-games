@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const path = require("path");
 
 const ExpressError = require("./expressError");
 const app = express();
@@ -10,6 +11,10 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+//for production
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "client/build")));
+}
 // routes
 
 // const userRoutes = require("./routes/users");
@@ -39,4 +44,7 @@ app.use(function (err, req, res, next) {
   });
 });
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build/index.html"));
+});
 module.exports = app;
