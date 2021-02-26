@@ -1,4 +1,4 @@
-CREATE DATABASE nteract;
+-- CREATE DATABASE nteract;
 
 CREATE TABLE game
 (
