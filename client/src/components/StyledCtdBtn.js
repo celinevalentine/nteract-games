@@ -5,7 +5,7 @@ const StyledCtdBtn = styled(Link)`
   z-index: 9;
   position: absolute;
   left: 50%;
-  top: 72%;
+  top: 70%;
   transform: translate(-50%, -50%);
 `;
 export default StyledCtdBtn;

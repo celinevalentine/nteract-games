@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import chair from "../../images/chair.png";
-
 import styled from "styled-components";
 import { Button } from "..";
-import StyledCtdBtn from "../StyledCtdBtn";
 
 const ToggleViewRight = () => {
   return (
@@ -15,14 +13,15 @@ const ToggleViewRight = () => {
         timer runs out.{" "}
       </p>
       <img src={chair} alt="chair" />
-      <StyledCtdBtn>
+      <StyledBtn>
         <Link to="/reading-the-room/games">
           <Button name="continue" backgroundColor={`var(--clr-continue)`} />
         </Link>
-      </StyledCtdBtn>
+      </StyledBtn>
     </Wrapper>
   );
 };
+export default ToggleViewRight;
 
 const Wrapper = styled.div`
   display: block;
@@ -35,22 +34,29 @@ const Wrapper = styled.div`
     line-height: 30px;
     text-align: center;
     word-wrap: break-word;
-    width: 455px;
+    position: absolute;
     height: 99px;
     width: 60%;
+    top: 25%;
+    left: 20%;
     min-width: 350px;
     display: inline-block;
     padding: 40px;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
   }
   img {
     padding: 0;
     margin: 0;
-    width: 30%;
+    width: 100px;
     min-width: 350px;
     vertical-align: top;
+    left: 70%;
+    position: absolute;
   }
 `;
-
-export default ToggleViewRight;
+const StyledBtn = styled(Link)`
+  z-index: 9;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+`;

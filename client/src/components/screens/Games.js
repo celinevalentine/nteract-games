@@ -8,7 +8,7 @@ function Games() {
 
   return (
     <Wrapper>
-      <h1>Choose A Senario</h1>
+      <h1>Choose A Scenario</h1>
       <ul style={{ listStyleType: "none" }}>
         {games &&
           games.map((game) => (

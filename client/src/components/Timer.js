@@ -41,11 +41,11 @@ const StyledTimer = styled.div`
   transform: translate(-50%, -50%);
   font-family: var(--ff-secondary);
   font-style: normal;
-  font-weight: normal;
+  font-weight: 900;
   font-size: 96px;
   line-height: 151px;
   text-align: center;
-
+  text-shadow: 0px 2px, 2px 0px, 2px 0px;
   color: #ffbd59;
   z-index: 2;
 `;

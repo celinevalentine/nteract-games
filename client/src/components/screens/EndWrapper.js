@@ -49,6 +49,6 @@ export const StyledButtons = styled(Link)`
   z-index: 9;
   position: absolute;
   left: 49%;
-  top: 32%;
+  top: 30%;
   transform: translate(-50%, -50%);
 `;

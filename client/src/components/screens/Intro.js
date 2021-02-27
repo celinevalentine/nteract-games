@@ -15,7 +15,7 @@ const Intro = () => {
     <Wrapper>
       <LeftArrow />
       <h1>Reading The Room</h1>
-      {toggleView ? <ToggleViewLeft /> : <ToggleViewRight />}
+      {toggleView ? <ToggleViewRight /> : <ToggleViewLeft />}
 
       <div className="circleButtons">
         <img
@@ -50,7 +50,7 @@ const Wrapper = styled.div`
     font-size: 46px; 
   }
   .circleButtons {
-    margin-top: -7rem;
+    margin-top: 20rem;
   }
 .darkCircle {
   margin-left: 1rem;
@@ -62,8 +62,7 @@ const Wrapper = styled.div`
   border-radius: 10px;
   background: #b7b7b7;
   cursor: pointer;
-} 
-
-`;
+ }
+ `;
 
 export default Intro;

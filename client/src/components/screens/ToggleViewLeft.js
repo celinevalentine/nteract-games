@@ -24,9 +24,11 @@ const Wrapper = styled.div`
     transform: rotateY(180deg);
     padding: 0;
     margin: 0;
-    width: 30%;
+    width: 100px;
     min-width: 350px;
     vertical-align: top;
+    left: 5%;
+    position: absolute;
   }
   p {
     font-family: var(--ff-primary);
@@ -34,14 +36,14 @@ const Wrapper = styled.div`
     line-height: 30px;
     text-align: center;
     word-wrap: break-word;
-    width: 455px;
+    position: absolute;
     height: 99px;
     width: 60%;
+    top: 25%;
+    left: 20%;
     min-width: 350px;
     display: inline-block;
     padding: 40px;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
   }
 `;
 

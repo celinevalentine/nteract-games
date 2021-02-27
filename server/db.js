@@ -2,6 +2,7 @@
 // const { DB_URI } = require("./config");
 // const db = new Client({ connectionString: DB_URI });
 // db.connect();
+
 require("dotenv").config();
 const { Pool } = require("pg");
 

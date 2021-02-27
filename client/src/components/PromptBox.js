@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   height: 100%;
   position: absolute;
   left: 48%;
-  top: 55%;
+  top: 54%;
   margin: 2rem 2rem;
   transform: translate(-50%, -50%);
   display: block;

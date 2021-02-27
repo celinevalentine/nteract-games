@@ -27,7 +27,7 @@ const EndGame = () => {
         <Link to="/">
           <Button backgroundColor={`var(--clr-continue)`} name="Continue" />
         </Link>
-        <Link to={`/reading-the-room/games/${game && game.id}/task/0/page/0`}>
+        <Link to={`/reading-the-room/games/${game && game.id}/tasks/0/page/0`}>
           <Button backgroundColor={`var(--clr-play)`} name="play again" />
         </Link>
       </StyledButtons>
