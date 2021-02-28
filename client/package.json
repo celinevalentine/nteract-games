@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "surge": "REACT_APP_BASE_URL=https://nteract-games.herokuapp.com npm run build && cp build/index.html build/200.html && surge build nteract-games.surge.sh && echo http://nteract-games.surge.sh"
+    "surge": "REACT_APP_BASE_URL=https://nteract-games.herokuapp.com npm run build && cp build/index.html build/200.html && surge build nteract-games.surge.sh && echo https://nteract-games.surge.sh"
   },
   "proxy": "http://localhost:5000",
   "eslintConfig": {
