@@ -2,7 +2,7 @@
   "name": "nteract-games",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "engines": {
     "node": "v14.15.1",
     "npm": "7.6.0"
