@@ -1,39 +1,28 @@
 {
-  "name": "reading-the-room",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "node-sass": "^4.14.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.4"
+  "name": "nteract-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "engines": {
+    "node": "v14.15.1",
+    "npm": "7.6.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "test": "jest -i",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "url-loader": "^4.1.1"
+  "keywords": [],
+  "author": "Celine Valentine",
+  "license": "ISC",
+  "dependencies": {
+    "@auth0/auth0-react": "^1.2.0",
+    "body-parser": "1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "4.17.1",
+    "jsonschema": "^1.4.0",
+    "pg": "^8.5.1"
   }
 }
