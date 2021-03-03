@@ -9,7 +9,7 @@ const GameProvider = ({ children }) => {
 
   const fetchGames = async () => {
     try {
-      const resp = await GameApi.get("/api/v1/games");
+      const resp = await GameApi.get("api/v1/games");
       let games = resp.data;
       setGames(games);
       console.log(games);
@@ -20,7 +20,11 @@ const GameProvider = ({ children }) => {
 
   const fetchTasks = async () => {
     try {
+<<<<<<< HEAD
       const resp = await GameApi.get(`/api/v1/tasks`);
+=======
+      const resp = await GameApi.get(`api/v1/tasks`);
+>>>>>>> remote folder
       let tasks = resp.data;
       setTasks(tasks);
       console.log(tasks);
