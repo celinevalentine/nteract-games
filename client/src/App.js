@@ -9,36 +9,42 @@ import {
   TaskPage,
   Home,
 } from "./components/screens";
+import { GameProvider } from "./components/context/GameContext";
 
 function App() {
   return (
     <AuthWrapper>
       <div className="container">
-        <Router>
-          <Switch>
-            <Route path="/reading-the-room/games/:gameId/tasks/:taskNumber/page/:pageNumber">
-              <TaskPage />
-            </Route>
-            <Route exact path="/reading-the-room/games">
-              <Games />
-            </Route>
-            <Route path="/reading-the-room/intro">
-              <Intro />
-            </Route>
-            <PrivateRoute path="/" exact={true}>
-              <Home />
-            </PrivateRoute>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route exact path="/timesup/games/:gameId/tasks/:taskNumber">
-              <FailScreen />
-            </Route>
-            <Route path="*">
-              <Error />
-            </Route>
-          </Switch>
-        </Router>
+        <GameProvider>
+          <Router>
+            <Switch>
+              <PrivateRoute path="/reading-the-room/games/:gameId/tasks/:taskNumber/page/:pageNumber">
+                <TaskPage />
+              </PrivateRoute>
+
+              <PrivateRoute exact path="/reading-the-room/games">
+                <Games />
+              </PrivateRoute>
+              <PrivateRoute path="/reading-the-room/intro">
+                <Intro />
+              </PrivateRoute>
+              <PrivateRoute path="/" exact={true}>
+                <Home />
+              </PrivateRoute>
+              <Route path="/login">
+                <Login />
+              </Route>
+              <PrivateRoute
+                exact
+                path="/timesup/games/:gameId/tasks/:taskNumber">
+                <FailScreen />
+              </PrivateRoute>
+              <Route path="*">
+                <Error />
+              </Route>
+            </Switch>
+          </Router>
+        </GameProvider>
       </div>
     </AuthWrapper>
   );
