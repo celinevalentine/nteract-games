@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require("path");
-
 const ExpressError = require("./expressError");
 const app = express();
 
@@ -14,9 +13,20 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "client/build")));
 }
 
+// const { auth, requiresAuth } = require("express-openid-connect");
+// app.use(
+//   auth({
+//     issuerBaseURL: "https://dev-pwb5v-aq.us.auth0.com",
+//     baseURL: process.env.REACT_APP_BASE_URL || "http://localhost:5000",
+//     clientID: "FUkZCqf5UcsHYWOZ0Yl3QXFii466O1Mc",
+//     secret: process.env.SECRET_KEY,
+//     idpLogout: true,
+//     authRequired: false,
+//   }),
+// );
 // routes
 
-// const userRoutes = require("./routes/users");
+// const userRoutes = require("./routes/users")
 const gameRoutes = require("./routes/games");
 const taskRoutes = require("./routes/tasks");
 const hotspotRoutes = require("./routes/hotspots");
