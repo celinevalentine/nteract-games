@@ -1,4 +1,3 @@
--- CREATE DATABASE nteract;
 
 CREATE TABLE game
 (

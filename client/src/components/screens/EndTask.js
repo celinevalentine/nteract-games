@@ -1,35 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { PromptBox, Button } from "..";
-import GameApi from "../apis/GameApi";
 import { Link, useParams } from "react-router-dom";
 import EndGame from "./EndGame";
 import styled from "styled-components";
+import useAxios from "../hooks/useAxios";
 
 const EndTask = () => {
   const { gameId, taskNumber, pageNumber } = useParams();
 
   console.log(gameId, taskNumber, pageNumber);
 
-  const [game, setGame] = useState([]);
-  const fetchGame = async () => {
-    try {
-      const resp = await GameApi.get(`/api/v1/games/${gameId}`);
-      let game = resp.data;
-      setGame(game);
-      console.log(game);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    fetchGame();
-  }, []);
+  const [game, error, isLoading] = useAxios(`/api/v1/games/${gameId}`);
 
   console.log(game && game.task);
   let tasks = game && game.task;
   console.log(taskNumber);
   let task = tasks && tasks[taskNumber - 1];
   console.log(task);
+
+  console.log(error, isLoading);
 
   return (
     <StyledPromptBoxDiv>

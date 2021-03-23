@@ -13,7 +13,7 @@ function Home() {
       </nav>
       <Wrapper>
         <Link to="/reading-the-room/intro">
-          <img src={readingRoom} alt="" />
+          <img src={readingRoom} alt="readingRoom" />
         </Link>
       </Wrapper>
     </>

@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
-    "test": "jest -i",
+    "test": "jest -i --watch",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
@@ -24,9 +24,15 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "express-openid-connect": "^2.2.1",
+    "express-jwt": "^6.0.0",
+    "express-jwt-authz": "^2.4.1",
     "jsonschema": "^1.4.0",
     "jsonwebtoken": "^8.5.1",
+    "jwks-rsa": "^1.12.3",
     "pg": "^8.5.1"
+  },
+  "devDependencies": {
+    "jest-environment-node-debug": "^2.0.0",
+    "supertest": "^6.1.3"
   }
 }

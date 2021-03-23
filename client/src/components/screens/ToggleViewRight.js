@@ -15,7 +15,11 @@ const ToggleViewRight = () => {
       <img src={chair} alt="chair" />
       <StyledBtn>
         <Link to="/reading-the-room/games">
-          <Button name="continue" backgroundColor={`var(--clr-continue)`} />
+          <Button
+            name="continue"
+            backgroundColor={`var(--clr-continue)`}
+            data-testid="button"
+          />
         </Link>
       </StyledBtn>
     </Wrapper>

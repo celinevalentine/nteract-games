@@ -21,13 +21,13 @@ const Intro = () => {
         <img
           className="lightCircle"
           src={ellipse}
-          alt="button 2"
+          alt="lightCircle"
           onClick={clickHandler}
         />
         <img
           className="darkCircle"
           src={ellipseDark}
-          alt="button 1"
+          alt="darkCircle"
           onClick={clickHandler}
         />
       </div>

@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link, useParams } from "react-router-dom";
-import GameApi from "../apis/GameApi";
+import useAxios from "../hooks/useAxios";
+
 import {
   PromptBox,
   Button,
@@ -14,20 +15,7 @@ function StartTask() {
   const { gameId, taskNumber, pageNumber } = useParams();
   console.log(pageNumber);
 
-  const [game, setGame] = useState([]);
-  const fetchGame = async () => {
-    try {
-      const resp = await GameApi.get(`/api/v1/games/${gameId}`);
-      let game = resp.data;
-      setGame(game);
-      console.log(game);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    fetchGame();
-  }, []);
+  const [game, error, isLoading] = useAxios(`/api/v1/games/${gameId}`);
 
   console.log(game && game.task);
   let tasks = game && game.task;

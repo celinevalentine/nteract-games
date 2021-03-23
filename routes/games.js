@@ -4,8 +4,9 @@ const ExpressError = require("../expressError");
 const Game = require("../models/Game");
 const { validate } = require("jsonschema");
 const gameNewSchema = require("../schemas/gameNewSchema.json");
+const checkJwt = require("../middleware/auth");
 
-router.post("/", async (req, res, next) => {
+router.post("/", checkJwt, async (req, res, next) => {
   try {
     const validation = validate(req.body, gameNewSchema);
 
@@ -21,7 +22,7 @@ router.post("/", async (req, res, next) => {
     return next(err);
   }
 });
-router.get("/", async (req, res, next) => {
+router.get("/", checkJwt, async (req, res, next) => {
   try {
     const games = await Game.findAll(req.query);
     res.json(games);
@@ -29,7 +30,7 @@ router.get("/", async (req, res, next) => {
     return next(err);
   }
 });
-router.get("/:id", async (req, res, next) => {
+router.get("/:id", checkJwt, async (req, res, next) => {
   try {
     const game = await Game.findOne(req.params.id);
     res.json(game);
@@ -37,7 +38,7 @@ router.get("/:id", async (req, res, next) => {
     return next(err);
   }
 });
-router.put("/:id", async (req, res, next) => {
+router.put("/:id", checkJwt, async (req, res, next) => {
   try {
     if ("id" in req.body) {
       throw new ExpressError("You are not allowed to change the ID", 400);
@@ -55,7 +56,7 @@ router.put("/:id", async (req, res, next) => {
     return next(err);
   }
 });
-router.delete("/:id", async (req, res, next) => {
+router.delete("/:id", checkJwt, async (req, res, next) => {
   try {
     const { id } = req.params;
     await Game.remove(id);

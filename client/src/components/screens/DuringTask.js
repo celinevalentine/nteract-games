@@ -1,37 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import useAxios from "../hooks/useAxios";
 import { useParams } from "react-router-dom";
-import GameApi from "../apis/GameApi";
 import { StyledImgWrapper, Timer, ClickScore } from "..";
 
 const DuringTask = () => {
-  const [task, setTask] = useState([]);
   const [score, setScore] = useState(0);
-  const [game, setGame] = useState([]);
   const { gameId, taskNumber } = useParams();
+  const [game, error, isLoading] = useAxios(`/api/v1/games/${gameId}`);
+
   console.log("taskNumber", taskNumber);
   console.log("gid", gameId);
+  let tasks = game && game.task;
+  let taskObj = tasks && tasks[taskNumber - 1];
+  console.log("tid", taskObj && taskObj.id);
 
-  const fetchData = () => {
-    GameApi.get(`/api/v1/games/${gameId}`)
-      .then((resp) => {
-        let game = resp.data;
-        setGame(game);
-        console.log("tasks", game && game.task);
-        let tasks = game && game.task;
-        let taskObj = tasks && tasks[taskNumber - 1];
-        console.log("tid", taskObj && taskObj.id);
-        return GameApi.get(`/api/v1/tasks/${taskObj && taskObj.id}`);
-      })
-      .then((resp) => {
-        let task = resp.data;
-        setTask(task);
-        console.log(task);
-      });
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const [task] = useAxios(`/api/v1/tasks/${taskObj && taskObj.id}`);
 
   console.log("task", task);
 

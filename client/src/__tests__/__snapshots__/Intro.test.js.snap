@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-idOhPF dOLqwu"
+  >
+    <div
+      class="sc-dQppl htDFas"
+    >
+      <img
+        alt="left-arrow"
+        class="left-arrow"
+        src="leftArrow.svg"
+      />
+    </div>
+    <h1>
+      Reading The Room
+    </h1>
+    <div
+      class="sc-kEjbxe eSxCki"
+    >
+      <img
+        alt="chair"
+        src="chair.png"
+      />
+      <p>
+        Being mindful of your surroundings can help make you more comfortable in new environments. 
+      </p>
+    </div>
+    <div
+      class="circleButtons"
+    >
+      <img
+        alt="lightCircle"
+        class="lightCircle"
+        src="ellipse.svg"
+      />
+      <img
+        alt="darkCircle"
+        class="darkCircle"
+        src="ellipseLight.svg"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
