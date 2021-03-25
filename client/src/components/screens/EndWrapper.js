@@ -48,6 +48,7 @@ export const StyledPromptBox = styled.div`
 export const StyledButtons = styled(Link)`
   z-index: 9;
   position: absolute;
-  top: 40%;
+  top: 42%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  `
+`;
