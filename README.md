@@ -1,5 +1,10 @@
 # nteract games
 
+
+![zoomCallIcon](https://user-images.githubusercontent.com/52294389/112428546-8cfb7580-8cf8-11eb-90eb-ccd859a2defd.png)
+<img width="781" alt="Screen Shot 2021-03-24 at 11 31 19 PM" src="https://user-images.githubusercontent.com/52294389/112428867-114df880-8cf9-11eb-82ab-f9d566df6ca5.png">
+![coffeeChat](https://user-images.githubusercontent.com/52294389/112428524-85d46780-8cf8-11eb-961c-ad43f896d8ee.png)
+
   <a href="https://nteract-games.herokuapp.com/">
 Project Deployment Site</a>
 
