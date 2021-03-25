@@ -53,36 +53,6 @@ const GameProvider = ({ children }) => {
     getTasks();
   }, []);
 
-  // const fetchGames = async () => {
-  //   try {
-  //     const resp = await GameApi.get("/api/v1/games");
-  //     let games = resp.data;
-  //     setGames(games);
-  //     console.log(games);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // const fetchTasks = async () => {
-  //   try {
-  //     const resp = await GameApi.get(`/api/v1/tasks`);
-  //     let tasks = resp.data;
-  //     setTasks(tasks);
-  //     console.log(tasks);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchGames();
-  // }, []);
-
-  // useEffect(() => {
-  //   fetchTasks();
-  // }, []);
-
   return (
     <GameContext.Provider
       value={{

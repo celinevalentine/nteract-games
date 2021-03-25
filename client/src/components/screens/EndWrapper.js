@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 export const StyledPromptBox = styled.div`
   z-index: 5;
-  width: 70%;
-  height: 100%;
+  width: 600px;
+  height: 100px;
   position: absolute;
-  left: 48%;
-  top: 50%;
+  left: 50%;
+  top: 30%;
   transform: translate(-50%, -50%);
   h3 {
     font-family: var(--ff-ternary);
@@ -18,7 +18,7 @@ export const StyledPromptBox = styled.div`
     z-index: 9;
     position: absolute;
     left: 50%;
-    top: 8%;
+    top: -25%;
     transform: translate(-50%, -50%);
   }
   small {
@@ -29,17 +29,17 @@ export const StyledPromptBox = styled.div`
     z-index: 9;
     position: absolute;
     left: 50%;
-    top: 15%;
+    top: 45%;
     transform: translate(-50%, -50%);
-    word-wrap: break-word;
+    width: 400px;
     padding-left: 1rem;
   }
 
   img {
-    width: 70%;
+    width: 550px;
     min-height: 100px;
     left: 50%;
-    top: 15%;
+    top: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
     margin-top: 1rem;
@@ -48,7 +48,7 @@ export const StyledPromptBox = styled.div`
 export const StyledButtons = styled(Link)`
   z-index: 9;
   position: absolute;
-  left: 49%;
-  top: 30%;
+  left: 50%;
+  top: 40%;
   transform: translate(-50%, -50%);
 `;

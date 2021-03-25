@@ -7,8 +7,8 @@ import { StyledPromptBox, StyledButtons } from "./EndWrapper";
 const FailScreen = () => {
   const { gameId, taskNumber } = useParams();
   const { tasks, games } = useContext(GameContext);
-  const task = tasks[taskNumber - 1];
-  const game = games[gameId - 1];
+  const task = tasks && tasks[taskNumber - 1];
+  const game = games && games[gameId - 1];
   const { id } = game;
 
   const { task_number } = task;

@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import useAxios from "../hooks/useAxios";
 
 import {
+  Loader,
   PromptBox,
   Button,
   StyledArrow,
@@ -21,25 +22,29 @@ function StartGame() {
   console.log(task);
 
   return (
-    game && (
-      <StyledImgWrapper>
-        <img src={task && task.img_url} alt="" />
-        <PromptBox title={game && game.game_name} msg={task && task.opener} />
-        <StyledArrow>
-          <Link to="/">
-            <LeftArrow />
-          </Link>
-        </StyledArrow>
-        <StyledCtdBtn>
-          <Link
-            to={`/reading-the-room/games/${game.id}/tasks/${
-              parseInt(taskNumber) + 1
-            }/page/${parseInt(pageNumber) + 1}`}>
-            <Button backgroundColor={`var(--clr-continue)`} name="Continue" />
-          </Link>
-        </StyledCtdBtn>
-      </StyledImgWrapper>
-    )
+    <>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <StyledImgWrapper>
+          <img src={task && task.img_url} alt="" />
+          <PromptBox title={game && game.game_name} msg={task && task.opener} />
+          <StyledArrow>
+            <Link to="/">
+              <LeftArrow />
+            </Link>
+          </StyledArrow>
+          <StyledCtdBtn>
+            <Link
+              to={`/reading-the-room/games/${game.id}/tasks/${
+                parseInt(taskNumber) + 1
+              }/page/${parseInt(pageNumber) + 1}`}>
+              <Button backgroundColor={`var(--clr-continue)`} name="Continue" />
+            </Link>
+          </StyledCtdBtn>
+        </StyledImgWrapper>
+      )}
+    </>
   );
 }
 

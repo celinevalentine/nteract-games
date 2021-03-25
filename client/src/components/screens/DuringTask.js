@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import useAxios from "../hooks/useAxios";
 import { useParams } from "react-router-dom";
 import { StyledImgWrapper, Timer, ClickScore } from "..";
+import Loader from "../Loader";
 
 const DuringTask = () => {
   const [score, setScore] = useState(0);
@@ -24,23 +25,29 @@ const DuringTask = () => {
   console.log("hotspot", hotspotName);
 
   return (
-    <StyledImgWrapper>
-      <img src={task && task.img_url} alt="" />
-      <Timer
-        taskNumber={task && task.task_number}
-        numberOfAnswers={task && task.num_answers}
-        gameId={game.id}
-        score={score}
-      />
-      <ClickScore
-        taskNumber={task && task.task_number}
-        numberOfAnswers={task && task.num_answers}
-        hotspots={hotspots}
-        hotspotName={hotspotName}
-        score={score}
-        setScore={setScore}
-      />
-    </StyledImgWrapper>
+    <>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <StyledImgWrapper>
+          <img src={task && task.img_url} alt="" />
+          <Timer
+            taskNumber={task && task.task_number}
+            numberOfAnswers={task && task.num_answers}
+            gameId={game.id}
+            score={score}
+          />
+          <ClickScore
+            taskNumber={task && task.task_number}
+            numberOfAnswers={task && task.num_answers}
+            hotspots={hotspots}
+            hotspotName={hotspotName}
+            score={score}
+            setScore={setScore}
+          />
+        </StyledImgWrapper>
+      )}
+    </>
   );
 };
 

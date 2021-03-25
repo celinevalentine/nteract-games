@@ -23,7 +23,9 @@ function Home() {
 const Wrapper = styled(Link)`
   display: flex;
   justify-content: center;
-  min-height: 100vh;
+  img {
+    cursor: pointer;
+  }
 `;
 
 export default Home;

@@ -6,6 +6,7 @@ import Button from "./Button";
 import ClickScore from "./ClickScore";
 import Timer from "./Timer";
 import Hotspot from "./Hotspot";
+import Loader from "./Loader";
 import PromptBox from "./PromptBox";
 import StyledArrow from "./StyledArrow";
 import StyledCtdBtn from "./StyledCtdBtn";
@@ -21,6 +22,7 @@ export {
   Timer,
   Hotspot,
   PromptBox,
+  Loader,
   StyledImgWrapper,
   StyledArrow,
   StyledCtdBtn,

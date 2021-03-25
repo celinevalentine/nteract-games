@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import EndGame from "./EndGame";
 import styled from "styled-components";
 import useAxios from "../hooks/useAxios";
+import Loader from "../Loader";
 
 const EndTask = () => {
   const { gameId, taskNumber, pageNumber } = useParams();
@@ -21,32 +22,41 @@ const EndTask = () => {
   console.log(error, isLoading);
 
   return (
-    <StyledPromptBoxDiv>
-      {taskNumber === "5" && pageNumber === "3" ? (
-        <EndGame
-          gameId={gameId}
-          taskNumber={taskNumber}
-          pageNumber={pageNumber}
-        />
+    <>
+      {isLoading ? (
+        <Loader />
       ) : (
-        <>
-          <StyledPromptBox>
-            <PromptBox
-              title={task && task.closer}
-              msg={task && task.reminder}
+        <StyledPromptBoxDiv>
+          {taskNumber === "5" && pageNumber === "3" ? (
+            <EndGame
+              gameId={gameId}
+              taskNumber={taskNumber}
+              pageNumber={pageNumber}
             />
-          </StyledPromptBox>
-          <StyledBtn>
-            <Link
-              to={`/reading-the-room/games/${game && game.id}/tasks/${
-                parseInt(taskNumber) + 1
-              }/page/1`}>
-              <Button backgroundColor={`var(--clr-continue)`} name="Continue" />
-            </Link>
-          </StyledBtn>
-        </>
+          ) : (
+            <>
+              <StyledPromptBox>
+                <PromptBox
+                  title={task && task.closer}
+                  msg={task && task.reminder}
+                />
+              </StyledPromptBox>
+              <StyledBtn>
+                <Link
+                  to={`/reading-the-room/games/${game && game.id}/tasks/${
+                    parseInt(taskNumber) + 1
+                  }/page/1`}>
+                  <Button
+                    backgroundColor={`var(--clr-continue)`}
+                    name="Continue"
+                  />
+                </Link>
+              </StyledBtn>
+            </>
+          )}
+        </StyledPromptBoxDiv>
       )}
-    </StyledPromptBoxDiv>
+    </>
   );
 };
 
@@ -99,7 +109,7 @@ const StyledPromptBox = styled.div`
   }
 
   img {
-    width: 70%;
+    width: 550px;
     min-height: 100px;
     left: 50%;
     top: 15%;

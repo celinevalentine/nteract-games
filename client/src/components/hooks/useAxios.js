@@ -6,7 +6,7 @@ const useAxios = (url, options = {}) => {
   const [response, setResponse] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const { isAuthenticated, getAccessTokenSilently } = useAuth0();
+  const { getAccessTokenSilently } = useAuth0();
   const audience = "https://nteractbackend.com";
 
   // after the first render, fetch our data

@@ -1,25 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { GameContext } from "../context/GameContext";
 import styled from "styled-components";
+import { Loader } from "..";
 
 function Games() {
   const { games } = React.useContext(GameContext);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
-    <Wrapper>
-      <h1>Choose A Scenario</h1>
-      <ul style={{ listStyleType: "none" }}>
-        {games &&
-          games.map((game) => (
-            <li key={game.id}>
-              <Link to={`/reading-the-room/games/${game.id}/tasks/0/page/0`}>
-                <img src={game.icon_url} alt={game.game_name} />
-              </Link>
-            </li>
-          ))}
-      </ul>
-    </Wrapper>
+    <>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <Wrapper>
+          <h1>Choose A Scenario</h1>
+          <ul style={{ listStyleType: "none" }}>
+            {games &&
+              games.map((game) => (
+                <li key={game.id}>
+                  <Link
+                    to={`/reading-the-room/games/${game.id}/tasks/0/page/0`}>
+                    <img src={game.icon_url} alt={game.game_name} />
+                  </Link>
+                </li>
+              ))}
+          </ul>
+        </Wrapper>
+      )}
+    </>
   );
 }
 
