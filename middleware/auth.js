@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const jwt = require("express-jwt");
 
 const jwksRsa = require("jwks-rsa");
@@ -37,8 +36,3 @@ function myFunction(re, res, next) {
 // });
 
 module.exports = checkJwt;
-=======
-
-
-
->>>>>>> 44cbac653ec2a1031b11d31fe89345c064c686da
