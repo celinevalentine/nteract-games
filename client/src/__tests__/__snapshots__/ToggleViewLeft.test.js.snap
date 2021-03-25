@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdfBwQ gRfdJ"
+  >
+    <img
+      alt="chair"
+      src="chair.png"
+    />
+    <p>
+      Being mindful of your surroundings can help make you more comfortable in new environments. 
+    </p>
+  </div>
+</DocumentFragment>
+`;

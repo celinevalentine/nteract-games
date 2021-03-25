@@ -1,0 +1,27 @@
+{
+  "name": "nteract-games",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "engines": {
+    "node": "v14.15.1",
+    "npm": "7.6.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "test": "jest -i"
+  },
+  "keywords": [],
+  "author": "Celine Valentine",
+  "license": "ISC",
+  "dependencies": {
+    "@auth0/auth0-react": "^1.2.0",
+    "body-parser": "*",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "*",
+    "jsonschema": "^1.4.0",
+    "pg": "^8.5.1"
+  }
+}

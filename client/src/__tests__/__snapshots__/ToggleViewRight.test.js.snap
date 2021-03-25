@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-pFZIQ cDSwvq"
+  >
+    <p>
+       In this game, your goal is to complete 5 different tasks before the timer runs out. 
+    </p>
+    <img
+      alt="chair"
+      src="chair.png"
+    />
+    <a
+      class="sc-jrAGrp eVPBUc"
+      href=""
+    />
+    <a
+      href="/reading-the-room/games"
+    >
+      <button
+        class="btn"
+      >
+        continue
+      </button>
+    </a>
+  </div>
+</DocumentFragment>
+`;
