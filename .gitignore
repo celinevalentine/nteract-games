@@ -1,4 +1,8 @@
 /node_modules
 .env
 .DS_Store
+<<<<<<< HEAD
 client/.eslintcache
+=======
+client/.eslintcache
+>>>>>>> ec77b81bb7fd2ed97ebf8d083bb5b7c49e594269
