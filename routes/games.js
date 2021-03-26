@@ -1,6 +1,6 @@
 const Router = require("express").Router;
 const router = new Router();
-const ExpressError = require("../expressError");
+const ExpressError = require("../ExpressError");
 const Game = require("../models/Game");
 const { validate } = require("jsonschema");
 const gameNewSchema = require("../schemas/gameNewSchema.json");

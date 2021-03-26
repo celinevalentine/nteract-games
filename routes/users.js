@@ -1,7 +1,7 @@
 const Router = require("express").Router;
 const router = new Router();
 // const user = require("../models/user");
-const ExpressError = require("../expressError");
+const ExpressError = require("../ExpressError");
 const pool = require("../db");
 const { validate } = require("jsonschema");
 const userNewSchema = require("../schemas/userNewSchema.json");

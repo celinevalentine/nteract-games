@@ -1,6 +1,6 @@
 const Router = require("express").Router;
 const router = new Router();
-const ExpressError = require("../expressError");
+const ExpressError = require("../ExpressError");
 const Task = require("../models/Task");
 const { validate } = require("jsonschema");
 const taskNewSchema = require("../schemas/taskNewSchema.json");
