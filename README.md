@@ -17,6 +17,7 @@ Project Deployment Site</a>
 * Axios
 * HTML
 * CSS
+* Auth0
   
 ### Create Local Envrionment (For Developers)
 1. Clone the repo
