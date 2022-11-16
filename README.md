@@ -54,6 +54,6 @@ I plan to continue building more game modules that require additional data struc
 
 ## Contact
 
-Celine Valentine - [@celineval3](https://twitter.com/celineval3) - cvdev8961@gmail.com
+Celine Valentine - celine.valentine.tech@gmail.com
 
 Source Code Link: [https://github.com/celinevalentine/nteract-games]()
